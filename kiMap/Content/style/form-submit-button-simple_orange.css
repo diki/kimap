@@ -1,0 +1,50 @@
+/********* Simple Orange **********/
+
+.form-submit-button-simple_orange{
+
+    cursor: pointer;
+
+    -moz-border-radius:.5em;
+    -webkit-border-radius:.5em;
+    border-radius:.5em;
+
+    padding:8px 18px;
+
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-shadow:-1px -1px 0px #d85d00;
+
+    border:1px solid #d85d00;
+
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffcc7a;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffcc7a;
+	box-shadow:inset 0px 1px 0px 0px #ffcc7a;
+
+    background: #ff6c00; /* old browsers */
+    background: -moz-linear-gradient(top, #faa51a 0%, #ff6c00 100%); /* firefox */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#faa51a), color-stop(100%,#ff6c00)); /* webkit */
+	background: linear-gradient(top, #faa51a 0%, #ff6c00 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#ff6c00', GradientType=0 ); /* ie */
+}
+
+.form-submit-button-simple_orange:hover{
+   
+    background: #fc8d0f; /* old browsers */
+    background: -moz-linear-gradient(top, #ffb53b 0%, #fc8d0f 100%); /* firefox */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffb53b), color-stop(100%,#fc8d0f)); /* webkit */
+	background: linear-gradient(top, #ffb53b 0%, #fc8d0f 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffb53b', endColorstr='#fc8d0f', GradientType=0 ); /* ie */
+}
+
+.form-submit-button-simple_orange:active{
+	
+    position: relative;
+	top: 1px;
+    background: #fc8d0f; /* old browsers */
+    background: -moz-linear-gradient(top, #fc8d0f 0%, #ffb53b 100%); /* firefox */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fc8d0f), color-stop(100%,#ffb53b)); /* webkit */
+	background: linear-gradient(top, #fc8d0f 0%, #ffb53b 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fc8d0f', endColorstr='#ffb53b', GradientType=0 ); /* ie */
+}

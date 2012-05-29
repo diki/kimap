@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="kimap.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="kimapStoreContainer">
+    <EntitySet Name="ServiceItemSet" EntityType="kimap.Store.ServiceItemSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ServiceItemMappingSet" EntityType="kimap.Store.ServiceItemMappingSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ServiceItemEntryTypeSet" EntityType="kimap.Store.ServiceItemEntryTypeSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="ServiceItemServiceItemMapping" Association="kimap.Store.ServiceItemServiceItemMapping">
+      <End Role="ServiceItem" EntitySet="ServiceItemSet" />
+      <End Role="ServiceItemMapping" EntitySet="ServiceItemMappingSet" />
+    </AssociationSet>
+    <AssociationSet Name="ServiceItemServiceItemMapping1" Association="kimap.Store.ServiceItemServiceItemMapping1">
+      <End Role="ServiceItem" EntitySet="ServiceItemSet" />
+      <End Role="ServiceItemMapping" EntitySet="ServiceItemMappingSet" />
+    </AssociationSet>
+    <AssociationSet Name="ServiceItemEntryTypeServiceItem" Association="kimap.Store.ServiceItemEntryTypeServiceItem">
+      <End Role="ServiceItemEntryType" EntitySet="ServiceItemEntryTypeSet" />
+      <End Role="ServiceItem" EntitySet="ServiceItemSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ServiceItemSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sentence" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="EntryTypeId" Type="int" Nullable="false" />
+    <Property Name="ServiceItemEntryType_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ServiceItemMappingSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ParentId" Type="int" Nullable="false" />
+    <Property Name="ChildId" Type="int" Nullable="false" />
+    <Property Name="ServiceItem_Id" Type="int" Nullable="false" />
+    <Property Name="ServiceItem_1_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ServiceItemEntryTypeSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Caption" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="ServiceItemServiceItemMapping">
+    <End Role="ServiceItem" Type="kimap.Store.ServiceItemSet" Multiplicity="1" />
+    <End Role="ServiceItemMapping" Type="kimap.Store.ServiceItemMappingSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServiceItem">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ServiceItemMapping">
+        <PropertyRef Name="ServiceItem_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ServiceItemServiceItemMapping1">
+    <End Role="ServiceItem" Type="kimap.Store.ServiceItemSet" Multiplicity="1" />
+    <End Role="ServiceItemMapping" Type="kimap.Store.ServiceItemMappingSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServiceItem">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ServiceItemMapping">
+        <PropertyRef Name="ServiceItem_1_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ServiceItemEntryTypeServiceItem">
+    <End Role="ServiceItemEntryType" Type="kimap.Store.ServiceItemEntryTypeSet" Multiplicity="1" />
+    <End Role="ServiceItem" Type="kimap.Store.ServiceItemSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServiceItemEntryType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ServiceItem">
+        <PropertyRef Name="ServiceItemEntryType_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="kimap" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="kimapContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ServiceItemSet" EntityType="kimap.ServiceItem" />
+          <EntitySet Name="ServiceItemMappingSet" EntityType="kimap.ServiceItemMapping" />
+          <EntitySet Name="ServiceItemEntryTypeSet" EntityType="kimap.ServiceItemEntryType" />
+          <AssociationSet Name="ServiceItemServiceItemMapping" Association="kimap.ServiceItemServiceItemMapping">
+            <End Role="ServiceItem" EntitySet="ServiceItemSet" />
+            <End Role="ServiceItemMapping" EntitySet="ServiceItemMappingSet" />
+          </AssociationSet>
+          <AssociationSet Name="ServiceItemServiceItemMapping1" Association="kimap.ServiceItemServiceItemMapping1">
+            <End Role="ServiceItem" EntitySet="ServiceItemSet" />
+            <End Role="ServiceItemMapping" EntitySet="ServiceItemMappingSet" />
+          </AssociationSet>
+          <AssociationSet Name="ServiceItemEntryTypeServiceItem" Association="kimap.ServiceItemEntryTypeServiceItem">
+            <End Role="ServiceItemEntryType" EntitySet="ServiceItemEntryTypeSet" />
+            <End Role="ServiceItem" EntitySet="ServiceItemSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ServiceItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Sentence" Nullable="false" MaxLength="255" Unicode="true" />
+          <Property Type="Int32" Name="EntryTypeId" Nullable="false" />
+          <NavigationProperty Name="ServiceItemMapping" Relationship="kimap.ServiceItemServiceItemMapping" FromRole="ServiceItem" ToRole="ServiceItemMapping" />
+          <NavigationProperty Name="ServiceItemMapping_1" Relationship="kimap.ServiceItemServiceItemMapping1" FromRole="ServiceItem" ToRole="ServiceItemMapping" />
+          <NavigationProperty Name="ServiceItemEntryType" Relationship="kimap.ServiceItemEntryTypeServiceItem" FromRole="ServiceItem" ToRole="ServiceItemEntryType" />
+        </EntityType>
+        <EntityType Name="ServiceItemMapping">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ParentId" Nullable="false" />
+          <Property Type="Int32" Name="ChildId" Nullable="false" />
+          <NavigationProperty Name="ServiceItem" Relationship="kimap.ServiceItemServiceItemMapping" FromRole="ServiceItemMapping" ToRole="ServiceItem" />
+          <NavigationProperty Name="ServiceItem_1" Relationship="kimap.ServiceItemServiceItemMapping1" FromRole="ServiceItemMapping" ToRole="ServiceItem" />
+        </EntityType>
+        <EntityType Name="ServiceItemEntryType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Caption" Nullable="false" />
+          <NavigationProperty Name="ServiceItem" Relationship="kimap.ServiceItemEntryTypeServiceItem" FromRole="ServiceItemEntryType" ToRole="ServiceItem" />
+        </EntityType>
+        <Association Name="ServiceItemServiceItemMapping">
+          <End Type="kimap.ServiceItem" Role="ServiceItem" Multiplicity="1" />
+          <End Type="kimap.ServiceItemMapping" Role="ServiceItemMapping" Multiplicity="*" />
+        </Association>
+        <Association Name="ServiceItemServiceItemMapping1">
+          <End Type="kimap.ServiceItem" Role="ServiceItem" Multiplicity="1" />
+          <End Type="kimap.ServiceItemMapping" Role="ServiceItemMapping" Multiplicity="*" />
+        </Association>
+        <Association Name="ServiceItemEntryTypeServiceItem">
+          <End Type="kimap.ServiceItemEntryType" Role="ServiceItemEntryType" Multiplicity="1" />
+          <End Type="kimap.ServiceItem" Role="ServiceItem" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="kimapStoreContainer" CdmEntityContainer="kimapContainer">
+    <EntitySetMapping Name="ServiceItemSet">
+      <EntityTypeMapping TypeName="IsTypeOf(kimap.ServiceItem)">
+        <MappingFragment StoreEntitySet="ServiceItemSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Sentence" ColumnName="Sentence" />
+          <ScalarProperty Name="EntryTypeId" ColumnName="EntryTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiceItemMappingSet">
+      <EntityTypeMapping TypeName="IsTypeOf(kimap.ServiceItemMapping)">
+        <MappingFragment StoreEntitySet="ServiceItemMappingSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="ChildId" ColumnName="ChildId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiceItemEntryTypeSet">
+      <EntityTypeMapping TypeName="IsTypeOf(kimap.ServiceItemEntryType)">
+        <MappingFragment StoreEntitySet="ServiceItemEntryTypeSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Caption" ColumnName="Caption" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ServiceItemServiceItemMapping" TypeName="kimap.ServiceItemServiceItemMapping" StoreEntitySet="ServiceItemMappingSet">
+      <EndProperty Name="ServiceItem">
+        <ScalarProperty Name="Id" ColumnName="ServiceItem_Id" />
+      </EndProperty>
+      <EndProperty Name="ServiceItemMapping">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ServiceItemServiceItemMapping1" TypeName="kimap.ServiceItemServiceItemMapping1" StoreEntitySet="ServiceItemMappingSet">
+      <EndProperty Name="ServiceItem">
+        <ScalarProperty Name="Id" ColumnName="ServiceItem_1_Id" />
+      </EndProperty>
+      <EndProperty Name="ServiceItemMapping">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ServiceItemEntryTypeServiceItem" TypeName="kimap.ServiceItemEntryTypeServiceItem" StoreEntitySet="ServiceItemSet">
+      <EndProperty Name="ServiceItemEntryType">
+        <ScalarProperty Name="Id" ColumnName="ServiceItemEntryType_Id" />
+      </EndProperty>
+      <EndProperty Name="ServiceItem">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="kimap" >
+        <EntityTypeShape EntityType="kimap.ServiceItem" Width="1.5" PointX="2.125" PointY="0.5" Height="1.59568359375" />
+        <EntityTypeShape EntityType="kimap.ServiceItemMapping" Width="1.5" PointX="1.125" PointY="3.75" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="kimap.ServiceItemEntryType" Width="1.5" PointX="4.875" PointY="1.5" Height="1.4033821614583331" />
+        <AssociationConnector Association="kimap.ServiceItemServiceItemMapping">
+          <ConnectorPoint PointX="2.375" PointY="2.287985026041667" />
+          <ConnectorPoint PointX="2.375" PointY="3.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="kimap.ServiceItemServiceItemMapping1">
+          <ConnectorPoint PointX="2.515625" PointY="2.4802864583333335" />
+          <ConnectorPoint PointX="2.515625" PointY="3.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="kimap.ServiceItemEntryTypeServiceItem">
+          <ConnectorPoint PointX="4.875" PointY="2.0862939453125" />
+          <ConnectorPoint PointX="3.625" PointY="2.0862939453125" />
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
