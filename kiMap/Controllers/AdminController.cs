@@ -10,7 +10,7 @@ namespace kiMap.Controllers
     {
         //
         // GET: /Admin/
-
+        [CBAuthorize]
         public ActionResult Index()
         {
             return View();

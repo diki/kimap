@@ -97,6 +97,35 @@
     <Compile Include="src\RegexUtilities.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\ie.css" />
+    <Content Include="Content\style3.css" />
+    <Content Include="Content\global.css" />
+    <Content Include="Content\img\arrow-next.png" />
+    <Content Include="Content\img\arrow-prev.png" />
+    <Content Include="Content\img\background.png" />
+    <Content Include="Content\img\loading.gif" />
+    <Content Include="Content\img\new-ribbon.png" />
+    <Content Include="Content\img\slide-1.jpg" />
+    <Content Include="Content\img\slide-2.jpg" />
+    <Content Include="Content\img\slide-3.jpg" />
+    <Content Include="Content\img\slide-4.jpg" />
+    <Content Include="Content\img\slide-5.jpg" />
+    <Content Include="Content\img\slide-6.jpg" />
+    <Content Include="Content\img\slide-7.jpg" />
+    <Content Include="Content\img\slide.jpg" />
+    <Content Include="Content\media-queries.css" />
+    <Content Include="Content\normalize.css" />
+    <Content Include="Content\reset.css" />
+    <Content Include="Content\responsive-gs-12col.css" />
+    <Content Include="Content\style2.css" />
+    <Content Include="Content\ie\9.css" />
+    <Content Include="Content\ie\8.css" />
+    <Content Include="Content\ie\7.css" />
+    <Content Include="Content\ie\all.css" />
+    <Content Include="Content\style\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="Content\style\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\style\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\style\bootstrap\css\bootstrap.min.css" />
     <Content Include="Content\themes\1124.svg" />
     <Content Include="Content\heydings_icons-webfont.svg" />
     <Content Include="Content\img\arrow.png" />
@@ -113,10 +142,6 @@
     <Content Include="Content\img\uc2-tr-120.png" />
     <Content Include="Content\img\uc2-tr-121.png" />
     <Content Include="Content\style.css" />
-    <Content Include="Content\style\bootstrap\css\bootstrap-responsive.css" />
-    <Content Include="Content\style\bootstrap\css\bootstrap-responsive.min.css" />
-    <Content Include="Content\style\bootstrap\css\bootstrap.css" />
-    <Content Include="Content\style\bootstrap\css\bootstrap.min.css" />
     <Content Include="Content\style\bootstrap\img\glyphicons-halflings-white.png" />
     <Content Include="Content\style\bootstrap\img\glyphicons-halflings.png" />
     <Content Include="Content\style\bootstrap\js\bootstrap.js" />
@@ -155,9 +180,12 @@
     <Content Include="Content\themes\base\jquery.ui.slider.css" />
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\ie.css" />
+    <Content Include="Content\woodfloor.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Content\coin-slider-styles.css" />
     <Content Include="kimap.edmx.sql" />
+    <Content Include="Scripts\boxsizing.htc" />
     <Content Include="Scripts\coin-slider.min.js" />
     <Content Include="Scripts\jquery-1.5.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.5.1.js" />
@@ -165,11 +193,13 @@
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.11.js" />
     <Content Include="Scripts\jquery-ui-1.8.11.min.js" />
+    <Content Include="Scripts\jquery.slider.js" />
     <Content Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
+    <Content Include="Scripts\slides.jquery.js" />
     <Content Include="Scripts\slides.min.jquery.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -226,6 +256,11 @@
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Content\designosaur\Designosaur-Italic.otf" />
+    <None Include="Content\designosaur\Designosaur-Italic.ttf" />
+    <None Include="Content\designosaur\Designosaur-Regular.otf" />
+    <None Include="Content\designosaur\Designosaur-Regular.ttf" />
+    <None Include="Content\directory\Directory.ttf" />
     <None Include="Content\heydings_icons-webfont.eot" />
     <None Include="Content\heydings_icons-webfont.ttf" />
     <None Include="Content\heydings_icons-webfont.woff" />

@@ -1,0 +1,35 @@
+﻿/* File Created: Haziran 2, 2012 */
+
+.logon-wrapper
+{
+    float: right;
+    background: #FEFEFE;
+    background: -moz-linear-gradient(top,#FEFEFE 0,#F7F7F7 19%,#E0E0E0 58%,#DFDFDF 92%,#DEDEDE 97%,#D5D5D5 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#FEFEFE),color-stop(19%,#F7F7F7),color-stop(58%,#E0E0E0),color-stop(92%,#DFDFDF),color-stop(97%,#DEDEDE),color-stop(100%,#D5D5D5));
+    background: -webkit-linear-gradient(top,#FEFEFE 0,#F7F7F7 19%,#E0E0E0 58%,#DFDFDF 92%,#DEDEDE 97%,#D5D5D5 100%);
+    background: -o-linear-gradient(top,#FEFEFE 0,#F7F7F7 19%,#E0E0E0 58%,#DFDFDF 92%,#DEDEDE 97%,#D5D5D5 100%);
+    background: -ms-linear-gradient(top,#FEFEFE 0,#F7F7F7 19%,#E0E0E0 58%,#DFDFDF 92%,#DEDEDE 97%,#D5D5D5 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefefe',endColorstr='#d5d5d5',GradientType=0);
+    background: linear-gradient(top,#FEFEFE 0,#F7F7F7 19%,#E0E0E0 58%,#DFDFDF 92%,#DEDEDE 97%,#D5D5D5 100%);
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    text-shadow: 0 1px 0 white;
+    height: 30px;
+    padding: 0px 40px;
+    margin-top: -5px;
+}
+
+.logon-wrapper a
+{
+    color: #0092B2;
+    text-decoration: none;
+    font-size: 12px;
+    padding: 0 4px;
+}
+
+.logon-wrapper a:hover
+{
+    text-decoration: underline;
+}

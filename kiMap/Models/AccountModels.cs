@@ -49,6 +49,7 @@ namespace kiMap.Models
         public string UserName { get; set; }
 
         [Required]
+        [RegularExpression(@"^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$",ErrorMessage="shitty mail address")]
         [DataType(DataType.EmailAddress)]
         [Display(Name = "Email address")]
         public string Email { get; set; }

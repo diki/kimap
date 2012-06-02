@@ -1,5 +1,5 @@
 ﻿body {
-	background-image: url('img/bgpattern.png');
+	background-image: url('img/gridme.png');
 	font-family: Arial,"Liberation Sans",FreeSans,sans-serif;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -9,7 +9,7 @@
 section {
 }
 
-html > /**/ body .navbar-inner-m{
+html > body .navbar-inner-m{
 	
 	border-color: #D5D5D5;
 	border-width: 0 0 1px;
@@ -133,7 +133,7 @@ a#start_selling:link, a#start_selling:visited {
 
 .icon_s-text{
     margin-top: -36px;
-    font-size: 36px;
+    font-size: 32px;
     margin-left: 87px;
     text-shadow: 0px 0px 1px black;
 }
