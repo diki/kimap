@@ -3,18 +3,10 @@
 <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <title>@ViewBag.Title</title>
-    <!--<link href="@Url.Content("~/Content/style/bootstrap/css/bootstrap.min.css")" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content("~/Content/style/bootstrap/css/bootstrap-responsive.min.css")" rel="stylesheet" type="text/css" />-->
     <link href="@Url.Content("~/Content/normalize.css")" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content("~/Content/style2.css")" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content("~/Content/global.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/landing_header.css")" rel="stylesheet" type="text/css" />
 
-    <!--<link href="@Url.Content("~/Content/reset.css")" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content("~/Content/responsive-gs-12col.css")" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content("~/Content/media-queries.css")" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content("~/Content/style3.css")" rel="stylesheet" type="text/css" />
-
-    <link href="@Url.Content("~/Content/ie.css")" rel="stylesheet" type="text/css" /> -->
+    <link href="@Url.Content("~/Content/ie.css")" rel="stylesheet" type="text/css" />
     <!--[if IE]>
     <link rel="stylesheet" href="../../Content/style/ie/all.css" type="text/css" />
     <![endif]-->
@@ -37,8 +29,8 @@
 
     
     @{ Html.RenderPartial("FacebookInit"); }
-    <div id="header" class="row">
-        <div id="headerTop">
+    <div id="header" class="">
+        <!--<div id="headerTop">
             <div class="container_960">
                 <div class="left-part">
                     <a class="brand" href="../" style="">
@@ -55,32 +47,13 @@
                 </div>
                 <br style="clear:both" />
             </div>
-        </div>
+        </div>-->
         <div id="nav">
         </div>
-        <!-- <div class="col span_6">
-            <a class="brand" href="../" style="">
-                <img style="margin-top:11px;" src="../../Content/img/logottt.png" />
-            </a>
-        </div>
-        <div class="col span_6">
-            <div class="row">
-                
-                <div id="logonPartial" class="logon-wrapper" style="">
-                    <div style="margin-top: 8px;">
-                        @{ Html.RenderPartial("_LogOnPartial"); }
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <br style="clear:right;" />
-    </div>-->
-    
        
     </div>
 
-    <div id="page_wrap" class="container row" id="stage" style="height: 100%; position:relative;padding-top:16px;">
+    <div id="page_wrap" class="container" id="stage" style="">
      @RenderBody()
     </div>
 </body>

@@ -1,0 +1,135 @@
+﻿
+#editorWrapper {
+	width: 50%;
+	
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#usersiteheader {
+	width: 100%;
+	height: 40px;
+	border: 2px solid black;
+}
+
+.row {
+	/*margin-bottom: 20px;*/
+	border: 2px solid rgba(0,0,0, 0.5);
+	
+	position: relative;
+}
+
+.col {
+	float: left;
+}
+
+.span_16{
+	width: 100%;
+}
+
+.span_12{
+	width: 75%;
+}
+
+.span_8{
+	width:50%;
+}
+
+.span_4{
+	width: 25%;
+}
+
+.span_3 {
+	width: 30%;
+}
+
+.content {
+	position: relative;
+}
+
+.edit-view {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.edit-view div {
+	color: white;
+	background: black;
+	opacity: 0.5;
+	width: 100px;
+}
+
+
+.center-part {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.edit-view-button {
+	
+}
+.edit-view-slide-button {
+	margin-top: 30px;
+}
+
+.edit-view-add-button {
+	position: absolute;
+	bottom: 0;
+}
+.content-center {
+	text-align: center;
+}
+
+.bg-noise1 {
+	background-image: url('../img/noise1.png')
+}
+
+.widget-header h1 {
+	text-align: center;
+}
+
+.widget-header h2 {
+	text-align: center;
+}
+.content-header {
+	/*background: -moz-linear-gradient(top,#FEFEFE 0,#F7F7F7 19%,#E0E0E0 58%,#DFDFDF 92%,#DEDEDE 97%,#D5D5D5 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#FEFEFE),color-stop(19%,#F7F7F7),color-stop(58%,#E0E0E0),color-stop(92%,#DFDFDF),color-stop(97%,#DEDEDE),color-stop(100%,#D5D5D5));
+    background: -webkit-linear-gradient(top,#FEFEFE 0,#F7F7F7 19%,#E0E0E0 58%,#DFDFDF 92%,#DEDEDE 97%,#D5D5D5 100%);
+    background: -o-linear-gradient(top,#FEFEFE 0,#F7F7F7 19%,#E0E0E0 58%,#DFDFDF 92%,#DEDEDE 97%,#D5D5D5 100%);
+    background: -ms-linear-gradient(top,#FEFEFE 0,#F7F7F7 19%,#E0E0E0 58%,#DFDFDF 92%,#DEDEDE 97%,#D5D5D5 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefefe',endColorstr='#d5d5d5',GradientType=0);
+    background: linear-gradient(top,#FEFEFE 0,#F7F7F7 19%,#E0E0E0 58%,#DFDFDF 92%,#DEDEDE 97%,#D5D5D5 100%);*/
+   
+   /*background-image: url('../img/gridme.png');*/
+    
+    
+}
+
+.img-container {
+	height: 120px;
+	min-width: 120px;
+	border: 6px solid #e5e5e5;
+	margin: 10px;
+}
+
+
+.height140 {
+	min-height: 140px;
+}
+
+.height240 {
+	min-height: 240px;
+}
+
+.bio-list {
+	list-style: none;
+	width: 100%;
+}
+
+.bio-list li {
+	width: 40%;
+	float: left;
+}
+

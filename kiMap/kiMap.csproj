@@ -79,6 +79,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\sController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -97,7 +98,16 @@
     <Compile Include="src\RegexUtilities.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\landing_header.css" />
     <Content Include="Content\ie.css" />
+    <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\collections\WidgetsCollection.js" />
+    <Content Include="Scripts\init.js" />
+    <Content Include="Scripts\lib\backbone.js" />
+    <Content Include="Scripts\lib\jquery.js" />
+    <Content Include="Scripts\lib\json2.js" />
+    <Content Include="Scripts\lib\underscore.js" />
+    <Content Include="Scripts\lib\underscore.string.js" />
     <Content Include="Content\style3.css" />
     <Content Include="Content\global.css" />
     <Content Include="Content\img\arrow-next.png" />
@@ -117,7 +127,7 @@
     <Content Include="Content\normalize.css" />
     <Content Include="Content\reset.css" />
     <Content Include="Content\responsive-gs-12col.css" />
-    <Content Include="Content\style2.css" />
+    <Content Include="Content\landing_main.css" />
     <Content Include="Content\ie\9.css" />
     <Content Include="Content\ie\8.css" />
     <Content Include="Content\ie\7.css" />
@@ -181,6 +191,7 @@
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Content\themes\ie.css" />
+    <Content Include="Content\user_site.css" />
     <Content Include="Content\woodfloor.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Content\coin-slider-styles.css" />
@@ -197,10 +208,14 @@
     <Content Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\models\WidgetModel.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
     <Content Include="Scripts\slides.jquery.js" />
     <Content Include="Scripts\slides.min.jquery.js" />
+    <Content Include="Scripts\views\EditorView.js" />
+    <Content Include="Scripts\views\WidgetView.js" />
+    <Content Include="Scripts\Widgets.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -270,6 +285,7 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\s\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
