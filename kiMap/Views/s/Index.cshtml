@@ -157,9 +157,7 @@
         <% if(field.type=="text") { %>
             <input class="edit-widget-input" type="text" value="<%=field.content%>" model-attr="<%=field.modelAttr%>"/>
         <% } else if(field.type=="paragraph") { %>
-            <textarea class="edit-widget-input" rows="5" cols="10" type="text" model-attr="<%=field.modelAttr%>">
-                <%=field.content%>
-            </textarea>
+            <textarea class="edit-widget-input" rows="5" cols="10" type="text" model-attr="<%=field.modelAttr%>"><%=field.content%></textarea>
         <% } %>
         </li>
 

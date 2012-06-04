@@ -49,6 +49,10 @@ a
     z-index: 2;
     height: 40px;
     position: relative;
+    background: #FFFFFF;
+    background: -moz-linear-gradient(top, #ffffff 0, #f7f7f7 5%, #dddddd 99%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%, #FFFFFF),color-stop(4%, #f7f7f7),color-stop(99%, #ddd));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#dddddd',GradientType=0);
 }
 
 #nav

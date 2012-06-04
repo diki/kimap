@@ -13,7 +13,7 @@
     },
 
     initialize: function (options) {
-        _.bindAll(this, "render", "modelUpdate","widgetMouseEnter", "widgetMouseLeave", "alternateWidgetView", "openEditView", "cancelEditView", "prepareTemplates");
+        _.bindAll(this, "render", "modelUpdate", "widgetMouseEnter", "widgetMouseLeave", "alternateWidgetView", "openEditView", "cancelEditView", "prepareTemplates");
 
         var self = this;
 
@@ -86,6 +86,8 @@
 
     modelUpdate: function () {
         //reconstruct this.templates
+
+        console.log("model update");
         this.prepareTemplates();
         this.render();
     },
@@ -166,11 +168,16 @@
     applyEditView: function () {
         var self = this;
         console.log("apply");
+        var vals = {};
         $(".edit-widget-input", self.el).each(function (idx, ell) {
             var attr = $(ell).attr("model-attr");
             var val = $(ell).val();
-            self.model.set(attr, val);
+
+            vals[attr] = val;
+
         });
+
+        self.model.set(vals);
     }
 
 });
