@@ -22,7 +22,7 @@
 
 body
 {
-    background-image: url('img/gridme.png');
+    /*background-image: url('img/gridme.png');*/
     font-family: Arial, "Liberation Sans" ,FreeSans,sans-serif;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;

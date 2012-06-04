@@ -133,3 +133,11 @@
 	float: left;
 }
 
+.edit-widget-form {
+	list-style: none;
+}
+
+.edit-widget-input {
+	width: 90%;
+}
+
