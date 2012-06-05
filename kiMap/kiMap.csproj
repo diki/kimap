@@ -79,6 +79,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\sController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -94,6 +95,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DbModels.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Models\ImageModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -110,7 +112,9 @@
     <Content Include="Scripts\collections\WidgetsCollection.js" />
     <Content Include="Scripts\init.js" />
     <Content Include="Scripts\jquery-te-Core.js" />
+    <Content Include="Scripts\jquery.form.js" />
     <Content Include="Scripts\lib\backbone.js" />
+    <Content Include="Scripts\lib\fileuploader.js" />
     <Content Include="Scripts\lib\jquery.js" />
     <Content Include="Scripts\lib\json2.js" />
     <Content Include="Scripts\lib\underscore.js" />
@@ -255,6 +259,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Images\Full\" />
+    <Folder Include="Content\Images\Thumb\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -297,6 +303,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="Views\Images\Upload.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

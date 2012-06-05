@@ -9,7 +9,9 @@
         "click .edit-view-slide-button": "alternateWidgetView",
         "click .edit-view-button": "openEditView",
         "click .edit-widget-cancel": "cancelEditView",
-        "click .edit-widget-done": "applyEditView"
+        "click .edit-widget-done": "applyEditView",
+        //"click .img-container": "openFileInput",
+        "change .img-upload-input": "submitImage"
     },
 
     initialize: function (options) {
@@ -40,6 +42,11 @@
 
         this.model.on("change", this.modelUpdate);
 
+
+        //also construct uplaods if necessary
+        this.createFileUploads();
+
+
         this.WidgetEditModels = {
             "header": [{
                 modelAttr: "header",
@@ -61,15 +68,34 @@
                 type: "paragraph"
             }]
         }
+
+        //ajax-form
+        $("form.img-upload-form").ajaxForm({
+            delegation: true,
+
+            beforeSend: function () {
+                var percentVal = "0%"
+                $(".img-upload-progress").width(percentVal);
+            },
+
+            uploadProgress: function (event, position, total, percentComplete) {
+                var pVal = percentComplete + "%";
+
+                console.log(pVal);
+                $(".img-upload-progress").width(pVal);
+            }
+        });
     },
 
     prepareTemplates: function () {
         var self = this;
         this._template = _.template($(self.templateSelector).html());
+
         //store alternative views and follow current view with index of this array (default 0)
         //these enables navigating between alternative views of widget
         this.templates = [];
         this.templates.push(self._template(self.model.attributes));
+
 
         //if there is alternative
         if ($(self.altTemplateSelector).length > 0) {
@@ -84,6 +110,17 @@
         }
     },
 
+    createFileUploads: function () {
+        var self = this;
+        console.log("hacı tttt",$(self.el).find(".file-upload"), self.el);
+        _.each($(".file-upload", self.el), function (ell, idx) {
+            return new qq.FileUploader({
+                element: ell,
+                action: '/Images/upload/',
+                debug: true
+            });
+        });
+    },
     modelUpdate: function () {
         //reconstruct this.templates
 
@@ -98,13 +135,17 @@
     },
 
     widgetMouseEnter: function (e) {
+        var self = this;
         e.stopPropagation();
 
         if ($(e.target).hasClass("widget-el") && !$(e.target).hasClass("editing")) {
             /*console.log("eeee")
             return;*/
-            var hasAlternatives = this.templates.length > 1;
-            $(this.el).append(_.template($("#edit-widget-template").html())({ slider: hasAlternatives }));
+            if ($(".edit-view", self.el).length == 0) {
+                var hasAlternatives = this.templates.length > 1;
+                $(this.el).append(_.template($("#edit-widget-template").html())({ slider: hasAlternatives }));
+            }
+
         }
 
 
@@ -178,6 +219,21 @@
         });
 
         self.model.set(vals);
+    },
+
+    openFileInput: function (e) {
+        //$(".img-upload-input", this.el).show();
+        //$(".img-upload-input", this.el).focus();
+        e.stopPropagation();
+        $(".img-upload-input", this.el).trigger("click");
+        //$(".img-upload-input", this.el).hide();
+    },
+
+    submitImage: function (e) {
+        e.stopPropagation();
+        console.log("submittingo");
+
+        $("form.img-upload-form", this.el).submit();
     }
 
 });

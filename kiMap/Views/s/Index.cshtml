@@ -38,21 +38,37 @@
         	</div>
 </script>
 <script type="text/template" id="text-widget-template">
-        	<div class="content widget-text-paragraph paragraph-image widget-imgtext height140 widget-el">
+        	<div class="content widget-text-paragraph paragraph-image widget-imgtext widget-el">
             	<div class="right-part img-container widget-el">
+                    <div class="file-upload" style="height: 100px; width: 100px; background: white;">
+                    </div>
             	</div>
             	<br style="clear:left	" />
             	<h2 class="widget-el"><%=title%></h2>
             	<div class="widget-el"><%=content%></div>
+
+                <br style="clear:both" />
         	</div>
 </script>
 <script type="text/template" id="text-widget-alt-template">
-        	<div class="content widget-text-paragraph paragraph-image widget-imgtext height140 widget-el">
+        	<div class="content widget-text-paragraph paragraph-image widget-imgtext widget-el">
             	<div class="left-part img-container widget-el">
+                    <div class="file-upload" style="height: 100px; width: 100px; background: white;">
+                    </div>
+                    <!--<form class="img-upload-form" method="post" action="/Images/upload" enctype="multipart/form-data">
+                        <input class="img-upload-input" type="file" name="ImageUploaded" />
+                        
+                    </form>
+                    <div class="img-upload-progress">
+                    </div>
+                    <div class="img-upload-status">
+                    </div>-->
             	</div>
             	<br style="clear:right;" />
             	<h2 class="widget-el"><%=title%></h2>
             	<div class="widget-el"><%=content%></div>
+
+                <br style="clear:both" />
         	</div>
 </script>
 <script type="text/template" id="text-widget-extra-template">
@@ -174,8 +190,10 @@
 <script src="../../Scripts/lib/underscore.js" type="text/javascript"></script>
 <script src="../../Scripts/lib/underscore.string.js" type="text/javascript"></script>
 <script src="../../Scripts/lib/backbone.js" type="text/javascript"></script>
+<script src="../../Scripts/lib/fileuploader.js" type="text/javascript"></script>
 
 <script src="../../Scripts/jquery-te-Core.js" type="text/javascript"></script>
+<script src="../../Scripts/jquery.form.js" type="text/javascript"></script>
 
 <script src="../../Scripts/init.js" type="text/javascript" charset="utf-8"></script>
 <script src="../../Scripts/models/WidgetModel.js" type="text/javascript" charset="utf-8"></script>
