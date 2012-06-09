@@ -276,18 +276,37 @@
         var imgWrapper = frm.siblings(".img-wrapper");
         var imgId = $(imgWrapper).attr("id");
 
+        console.log("ewrewrwer");
         $(frm).ajaxSubmit(function (d) {
-            var img = document.createElement("img");
+            /*var img = document.createElement("img");
             img.src = "/Content/Images/Thumb/" + d.src;
-            self.imagesUploaded(img, imgId, "/Content/Images/Thumb/" + d.src);
+            self.imagesUploaded(img, imgId, "/Content/Images/Thumb/" + d.src);*/
+
+            //console.log(JSON.parse(d), arguments);
+
+            var dd = false;
+            if ($.browser.msie) {
+                console.log(d);
+                var die = $(d).html();
+
+                console.log(die);
+                dd = $.parseJSON(die);
+                console.log(dd);
+            } else {
+                dd = $.parseJSON(d);
+            }
+
+
+
+            self.imagesUploaded(imgId, "/Content/Images/Thumb/" + dd.src);
 
         });
     },
 
-    imagesUploaded: function (img, imgId, imgSrc) {
+    imagesUploaded: function (imgId, imgSrc) {
         var self = this;
         var id = imgId.split("-")[1];
-        self.model.set("imgSrc"+id, imgSrc);
+        self.model.set("imgSrc" + id, imgSrc);
     }
 
 });

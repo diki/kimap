@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using kiMap.Models;
 using System.IO;
+using System.Web.Script.Serialization;
 
 namespace kiMap.Controllers
 {
@@ -34,7 +35,7 @@ namespace kiMap.Controllers
         //}
 
         [HttpPost]
-        public JsonResult Upload(ImageModel model)
+        public ActionResult Upload(ImageModel model)
         {
             //string[] s = qqfile.Split('.');
             //string extension = s[s.Length - 1];
@@ -65,7 +66,10 @@ namespace kiMap.Controllers
                 ImageModel.ResizeAndSave(thumbPath, fileName, model.ImageUploaded.InputStream, 120, true, false);
                 ImageModel.ResizeAndSave(fullPath, fileName, model.ImageUploaded.InputStream, 600, false, true);
 
-                return Json(new { success = true, src = fileName+".jpg"});
+                var result = new { success = true, src = fileName+".jpg"};
+                var json = new JavaScriptSerializer().Serialize(result);
+
+                return Content(json, "text/plain");
             }
             catch (System.Exception ex)
             {
