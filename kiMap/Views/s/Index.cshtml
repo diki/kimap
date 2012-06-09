@@ -1,10 +1,28 @@
 ﻿@{
     ViewBag.Title = "site";
 }
-
 <link href="@Url.Content("~/Content/user_site.css")" rel="stylesheet" type="text/css" />
-
 <link href="@Url.Content("~/Content/jquery-te-Style.css")" rel="stylesheet" type="text/css" />
+<style type="text/css">
+    .SI-FILES-STYLIZED label.cabinet
+    {
+        width: 79px;
+        height: 22px;
+        background: url(/Content/img/btn-choose-file.gif) 0 0 no-repeat;
+        display: block;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    .SI-FILES-STYLIZED label.cabinet input.img-upload-input
+    {
+        position: relative;
+        height: 100%;
+        width: auto;
+        opacity: 0;
+        -moz-opacity: 0;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    }
+</style>
 <div id="editorWrapper" style="position: relative;">
 </div>
 <script type="text/template" id="header-widget-template">
@@ -40,8 +58,15 @@
 <script type="text/template" id="text-widget-template">
         	<div class="content widget-text-paragraph paragraph-image widget-imgtext widget-el">
             	<div class="right-part img-container widget-el">
-                    <div class="file-upload" style="height: 100px; width: 100px; background: white;">
-                    </div>
+
+                    <div class="img-wrapper widget-el" id="img-1">
+                        <img src="<%=imgSrc1%>" />
+                    </div>                        
+                    <form class="img-upload-form" method="post" action="/Images/upload" enctype="multipart/form-data">
+                        <label class="cabinet"> 
+                            <input type="file" name="ImageUploaded" class="img-upload-input" >
+                        </label>
+                    </form>
             	</div>
             	<br style="clear:left	" />
             	<h2 class="widget-el"><%=title%></h2>
@@ -53,16 +78,14 @@
 <script type="text/template" id="text-widget-alt-template">
         	<div class="content widget-text-paragraph paragraph-image widget-imgtext widget-el">
             	<div class="left-part img-container widget-el">
-                    <div class="file-upload" style="height: 100px; width: 100px; background: white;">
+                    <div class="img-wrapper widget-el" id="img-1">
+                        <img src="<%=imgSrc1%>" />
                     </div>
-                    <!--<form class="img-upload-form" method="post" action="/Images/upload" enctype="multipart/form-data">
-                        <input class="img-upload-input" type="file" name="ImageUploaded" />
-                        
+                    <form class="img-upload-form" method="post" action="/Images/upload" enctype="multipart/form-data">
+                        <label class="cabinet"> 
+                            <input type="file" name="ImageUploaded" class="img-upload-input">
+                        </label>
                     </form>
-                    <div class="img-upload-progress">
-                    </div>
-                    <div class="img-upload-status">
-                    </div>-->
             	</div>
             	<br style="clear:right;" />
             	<h2 class="widget-el"><%=title%></h2>
@@ -89,22 +112,46 @@
 </script>
 <script type="text/template" id="gallery-widget-template">
         	<div class="content widget-text widget-gallery widget-el">
-            	<div class="left-part span_3">
+            	<div class="left-part">
 	            	<div class="img-container widget-el">
+                        <div class="img-wrapper widget-el" id="img-1">
+                            <img src="<%=imgSrc1%>" />
+                        </div>
+                        <form class="img-upload-form" method="post" action="/Images/upload" enctype="multipart/form-data">
+                            <label class="cabinet"> 
+                                <input type="file" name="ImageUploaded" class="img-upload-input" />
+                            </label>
+                        </form>
             		</div>
             		<h2 class="widget-el"><%=title1%></h2>
             		<h3 class="widget-el"><%=content1%></h3>
             	</div>
 
-            	<div class="left-part span_3 widget-el">
+            	<div class="left-part widget-el">
 	            	<div class="img-container widget-el">
+                        <div class="img-wrapper widget-el" id="img-2">
+                            <img src="<%=imgSrc2%>" />
+                        </div>
+                        <form class="img-upload-form" method="post" action="/Images/upload" enctype="multipart/form-data">
+                            <label class="cabinet"> 
+                                <input type="file" name="ImageUploaded" class="img-upload-input" />
+                            </label>
+                        </form>
             		</div>
             		<h2 class="widget-el"><%=title2%></h2>
             		<h3 class="widget-el"><%=content2%></h3>
             	</div>
 
-            	<div class="left-part span_3 widget-el">
+            	<div class="left-part widget-el">
 	            	<div class="img-container widget-el">
+                        <div class="img-wrapper widget-el" id="img-3">
+                            <img src="<%=imgSrc3%>" />
+                        </div>
+                        <form class="img-upload-form" method="post" action="/Images/upload" enctype="multipart/form-data">
+                            <label class="cabinet"> 
+                                <input type="file" name="ImageUploaded" class="img-upload-input" />
+                            </label>
+                        </form>
             		</div>
             		<h2 class="widget-el"><%=title3%></h2>
             		<h3 class="widget-el"><%=content3%></h3>
@@ -115,16 +162,40 @@
 </script>
 <script type="text/template" id="gallery-widget-alt-template">
         	<div class="content widget-text widget-gallery widget-el">
-            	<div class="left-part span_3 widget-el">
+            	<div class="left-part widget-el">
 	            	<div class="img-container widget-el">
+                        <div class="img-wrapper widget-el" id="img-1">
+                            <img src="<%=imgSrc1%>" />
+                        </div>
+                        <form class="img-upload-form" method="post" action="/Images/upload" enctype="multipart/form-data">
+                            <label class="cabinet"> 
+                                <input type="file" name="ImageUploaded" class="img-upload-input" />
+                            </label>
+                        </form>
             		</div>
             	</div>
-            	<div class="left-part span_3 widget-el">
+            	<div class="left-part widget-el">
 	            	<div class="img-container widget-el">
+                        <div class="img-wrapper widget-el" id="img-2">
+                            <img src="<%=imgSrc2%>" />
+                        </div>
+                        <form class="img-upload-form" method="post" action="/Images/upload" enctype="multipart/form-data">
+                            <label class="cabinet"> 
+                                <input type="file" name="ImageUploaded" class="img-upload-input" />
+                            </label>
+                        </form>
             		</div>
             	</div>
-            	<div class="left-part span_3 widget-el">
+            	<div class="left-part widget-el">
 	            	<div class="img-container widget-el">
+                        <div class="img-wrapper widget-el" id="img-3">
+                            <img src="<%=imgSrc3%>" />
+                        </div>
+                        <form class="img-upload-form" method="post" action="/Images/upload" enctype="multipart/form-data">
+                            <label class="cabinet"> 
+                                <input type="file" name="ImageUploaded" class="img-upload-input" />
+                            </label>
+                        </form>
             		</div>
             	</div>
             	
@@ -136,6 +207,14 @@
                 
             	<div class="left-part left-part-floater span_4 widget-el">
             		<div class="img-container">
+                        <div class="img-wrapper widget-el" id="img-1">
+                            <img src="<%=imgSrc1%>" />
+                        </div>
+                        <form class="img-upload-form" method="post" action="/Images/upload" enctype="multipart/form-data">
+                            <label class="cabinet"> 
+                                <input type="file" name="ImageUploaded" class="img-upload-input" />
+                            </label>
+                        </form>
             		</div>
             	</div>
             	
@@ -158,7 +237,6 @@
             	<br style="clear:both;" />
         	</div>
 </script>
-
 <!-- editor view template for general -->
 <script type="text/template" id="widget-edit-template">
     <ul class="edit-widget-form">
@@ -191,13 +269,13 @@
 <script src="../../Scripts/lib/underscore.string.js" type="text/javascript"></script>
 <script src="../../Scripts/lib/backbone.js" type="text/javascript"></script>
 <script src="../../Scripts/lib/fileuploader.js" type="text/javascript"></script>
-
+<script src="../../Scripts/lib/si.files.js" type="text/javascript"></script>
 <script src="../../Scripts/jquery-te-Core.js" type="text/javascript"></script>
 <script src="../../Scripts/jquery.form.js" type="text/javascript"></script>
-
 <script src="../../Scripts/init.js" type="text/javascript" charset="utf-8"></script>
 <script src="../../Scripts/models/WidgetModel.js" type="text/javascript" charset="utf-8"></script>
-<script src="../../Scripts/collections/WidgetsCollection.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../Scripts/collections/WidgetsCollection.js" type="text/javascript"
+    charset="utf-8"></script>
 <script src="../../Scripts/views/EditorView.js" type="text/javascript" charset="utf-8"></script>
 <script src="../../Scripts/views/WidgetView.js" type="text/javascript" charset="utf-8"></script>
 <script src="../../Scripts/app.js" type="text/javascript" charset="utf-8"></script>

@@ -34,10 +34,10 @@ namespace kiMap.Controllers
         //}
 
         [HttpPost]
-        public JsonResult Upload(string qqfile)
+        public JsonResult Upload(ImageModel model)
         {
-            string[] s = qqfile.Split('.');
-            string extension = s[s.Length - 1];
+            //string[] s = qqfile.Split('.');
+            //string extension = s[s.Length - 1];
             string fileName = Guid.NewGuid().ToString();
             string serverPath = Server.MapPath("~");
             string imagesPath = serverPath + "Content\\Images\\";
@@ -52,17 +52,26 @@ namespace kiMap.Controllers
             //}
 
             var stream = Request.InputStream;
-            if (String.IsNullOrEmpty(Request["qqfile"]))
-            {
-                // IE
-                HttpPostedFileBase postedFile = Request.Files[0];
-                stream = postedFile.InputStream;
-                //file = Path.Combine(path, System.IO.Path.GetFileName(Request.Files[0].FileName));
-            }
-            ImageModel.ResizeAndSave(thumbPath, fileName, stream, 120, true, false);
-            ImageModel.ResizeAndSave(fullPath, fileName, stream, 600, false, true);
+            //if (String.IsNullOrEmpty(Request["qqfile"]))
+            //{
+            //    // IE
+            //    HttpPostedFileBase postedFile = Request.Files[0];
+            //    stream = postedFile.InputStream;
+            //    //file = Path.Combine(path, System.IO.Path.GetFileName(Request.Files[0].FileName));
+            //}
 
-            return Json(new { success = true });
+            try
+            {
+                ImageModel.ResizeAndSave(thumbPath, fileName, model.ImageUploaded.InputStream, 120, true, false);
+                ImageModel.ResizeAndSave(fullPath, fileName, model.ImageUploaded.InputStream, 600, false, true);
+
+                return Json(new { success = true, src = fileName+".jpg"});
+            }
+            catch (System.Exception ex)
+            {
+                return Json(new { success = false });
+            }
+
         }
 
     }

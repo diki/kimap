@@ -16,10 +16,8 @@ var EditorView = Backbone.View.extend({
 	},
 	
 	appendWidget: function(widgetModel){
-		console.log(widgetModel.attributes);
 		var v = new WidgetView({model:widgetModel});
 		
-		console.log(v.el);
 		$(this.el).append(v.el);	
 	}
 

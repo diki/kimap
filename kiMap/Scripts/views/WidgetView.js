@@ -15,7 +15,8 @@
     },
 
     initialize: function (options) {
-        _.bindAll(this, "render", "modelUpdate", "widgetMouseEnter", "widgetMouseLeave", "alternateWidgetView", "openEditView", "cancelEditView", "prepareTemplates");
+        _.bindAll(this, "render", "modelUpdate", "widgetMouseEnter", "widgetMouseLeave",
+        "alternateWidgetView", "openEditView", "cancelEditView", "prepareTemplates", "openFileInput");
 
         var self = this;
 
@@ -50,7 +51,7 @@
         this.WidgetEditModels = {
             "header": [{
                 modelAttr: "header",
-                "labelName": "Başlık",
+                labelName: "Başlık",
                 type: "text"
             }, {
                 modelAttr: "subheader",
@@ -60,31 +61,69 @@
 
             "text": [{
                 modelAttr: "title",
-                "labelName": "Başlık",
+                labelName: "Başlık",
                 type: "text"
             }, {
                 modelAttr: "content",
                 labelName: "İçerik",
                 type: "paragraph"
+            }],
+
+            "title": [{
+                modelAttr: "content",
+                labelName: "Başlık",
+                type: "text"
+            }],
+
+            "gallery": [{
+                modelAttr: "title1",
+                labelName: "Başlık",
+                type: "text"
+            }, {
+                modelAttr: "content1",
+                labelName: "İçerik",
+                type: "paragraph"
+            }, {
+                modelAttr: "title2",
+                labelName: "Başlık",
+                type: "text"
+            }, {
+                modelAttr: "content2",
+                labelName: "İçerik",
+                type: "paragraph"
+            }, {
+                modelAttr: "title3",
+                labelName: "Başlık",
+                type: "text"
+            }, {
+                modelAttr: "content3",
+                labelName: "İçerik",
+                type: "paragraph"
+            }],
+
+            "bio": [{
+                modelAttr: "title",
+                labelName: "Başlık",
+                type: "text"
+            }, {
+                modelAttr: "address",
+                labelName: "İçerik",
+                type: "text"
+            }, {
+                modelAttr: "phone",
+                labelName: "Başlık",
+                type: "text"
+            }, {
+                modelAttr: "email",
+                labelName: "İçerik",
+                type: "text"
+            }, {
+                modelAttr: "website",
+                labelName: "Başlık",
+                type: "text"
             }]
         }
 
-        //ajax-form
-        $("form.img-upload-form").ajaxForm({
-            delegation: true,
-
-            beforeSend: function () {
-                var percentVal = "0%"
-                $(".img-upload-progress").width(percentVal);
-            },
-
-            uploadProgress: function (event, position, total, percentComplete) {
-                var pVal = percentComplete + "%";
-
-                console.log(pVal);
-                $(".img-upload-progress").width(pVal);
-            }
-        });
     },
 
     prepareTemplates: function () {
@@ -94,32 +133,35 @@
         //store alternative views and follow current view with index of this array (default 0)
         //these enables navigating between alternative views of widget
         this.templates = [];
-        this.templates.push(self._template(self.model.attributes));
+        this.templates.push($(self._template(self.model.attributes)));
 
 
         //if there is alternative
         if ($(self.altTemplateSelector).length > 0) {
             this._altTemplate = _.template($(self.altTemplateSelector).html());
-            this.templates.push(self._altTemplate(self.model.attributes));
+
+            var content = self._altTemplate(self.model.attributes);
+
+            this.templates.push($(content));
         }
 
         //if there is extra
         if ($(self.extraTemplateSelector).length > 0) {
             this._extraTemplate = _.template($(self.extraTemplateSelector).html());
-            this.templates.push(self._extraTemplate(self.model.attributes));
+            this.templates.push($(self._extraTemplate(self.model.attributes)));
         }
     },
 
     createFileUploads: function () {
         var self = this;
-        console.log("hacı tttt",$(self.el).find(".file-upload"), self.el);
-        _.each($(".file-upload", self.el), function (ell, idx) {
-            return new qq.FileUploader({
-                element: ell,
-                action: '/Images/upload/',
-                debug: true
-            });
+        _.each($(".img-upload-input", self.el), function (ell, idx) {
+            SI.Files.stylize(ell);
         });
+    },
+
+    imageUploaded: function () {
+        var self = this;
+        console.log($(".img-container", self.el));
     },
     modelUpdate: function () {
         //reconstruct this.templates
@@ -222,18 +264,30 @@
     },
 
     openFileInput: function (e) {
-        //$(".img-upload-input", this.el).show();
-        //$(".img-upload-input", this.el).focus();
         e.stopPropagation();
-        $(".img-upload-input", this.el).trigger("click");
+        $(".img-upload-input", this.el).show().focus().trigger("click").hide();
         //$(".img-upload-input", this.el).hide();
     },
 
     submitImage: function (e) {
         e.stopPropagation();
-        console.log("submittingo");
+        var self = this;
+        var frm = $(e.target).parents("form");
+        var imgWrapper = frm.siblings(".img-wrapper");
+        var imgId = $(imgWrapper).attr("id");
 
-        $("form.img-upload-form", this.el).submit();
+        $(frm).ajaxSubmit(function (d) {
+            var img = document.createElement("img");
+            img.src = "/Content/Images/Thumb/" + d.src;
+            self.imagesUploaded(img, imgId, "/Content/Images/Thumb/" + d.src);
+
+        });
+    },
+
+    imagesUploaded: function (img, imgId, imgSrc) {
+        var self = this;
+        var id = imgId.split("-")[1];
+        self.model.set("imgSrc"+id, imgSrc);
     }
 
 });

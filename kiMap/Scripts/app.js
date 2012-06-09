@@ -10,7 +10,8 @@ $(function(){
 	var m2 = new WidgetModel({
 		type: "text",
 		title: "Bu işte en iyi biziz",
-		content: "Ne iş yapıyorsunuz. Sizin için önemi nedir. Ürün, servis ..."
+		content: "Ne iş yapıyorsunuz. Sizin için önemi nedir. Ürün, servis ...",
+        imgSrc1: undefined
 	});
 	
 	//title
@@ -24,10 +25,13 @@ $(function(){
 		type: "gallery",
 		title1: "title 1",
 		content1: "content 1",
+        imgSrc1: undefined,
 		title2: "title 2",
 		content2: "content 2",
+        imgSrc2: undefined,
 		title3: "title 3",
-		content3: "content 3"
+		content3: "content 3",
+        imgSrc3: undefined
 	});
 	
 	//bio
@@ -39,7 +43,8 @@ $(function(){
 		email: "email",
 		website: "website",
 		fb: undefined,
-		tw: undefined
+		tw: undefined,
+        imgSrc1: undefined
 	});
 	
 	var widgetsCol = new WidgetsCollection();

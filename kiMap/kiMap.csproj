@@ -105,6 +105,7 @@
     <Compile Include="src\RegexUtilities.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\img\btn-choose-file.gif" />
     <Content Include="Content\jquery-te-Style.css" />
     <Content Include="Content\landing_header.css" />
     <Content Include="Content\ie.css" />
@@ -222,6 +223,7 @@
     <Content Include="Scripts\models\WidgetModel.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
+    <Content Include="Scripts\lib\si.files.js" />
     <Content Include="Scripts\slides.jquery.js" />
     <Content Include="Scripts\slides.min.jquery.js" />
     <Content Include="Scripts\views\EditorView.js" />
