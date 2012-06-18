@@ -219,5 +219,22 @@
 .qq-upload-failed-text {display:none;}
 .qq-upload-fail .qq-upload-failed-text {display:inline;}
 
+.break-word {
+	word-wrap: break-word;
+}
 
+.widgets-gallery-box {
+	list-style: none;
+	width: 100px;
+	border: 2px solid #4d9;
+	position: absolute;
+	padding: 4px 4px;
+}
 
+.widgets-gallery-box li {
+	cursor: pointer;
+	border: 1px solid #A37;
+	height: 25px;
+	margin: 2px 0px;
+	
+}

@@ -78,6 +78,7 @@
     <Compile Include="CBAuthorizeAttribute.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BuildController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\sController.cs" />
@@ -226,6 +227,7 @@
     <Content Include="Scripts\lib\si.files.js" />
     <Content Include="Scripts\slides.jquery.js" />
     <Content Include="Scripts\slides.min.jquery.js" />
+    <Content Include="Scripts\views\WidgetBoxView.js" />
     <Content Include="Scripts\views\EditorView.js" />
     <Content Include="Scripts\views\WidgetView.js" />
     <Content Include="Scripts\Widgets.js" />

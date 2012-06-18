@@ -11,12 +11,13 @@
         "click .edit-widget-cancel": "cancelEditView",
         "click .edit-widget-done": "applyEditView",
         //"click .img-container": "openFileInput",
-        "change .img-upload-input": "submitImage"
+        "change .img-upload-input": "submitImage",
+        "click .edit-view-add-button": "openWidgetBox"
     },
 
     initialize: function (options) {
         _.bindAll(this, "render", "modelUpdate", "widgetMouseEnter", "widgetMouseLeave",
-        "alternateWidgetView", "openEditView", "cancelEditView", "prepareTemplates", "openFileInput");
+        "alternateWidgetView", "openEditView", "cancelEditView", "prepareTemplates", "openFileInput", "openWidgetBox");
 
         var self = this;
 
@@ -26,8 +27,8 @@
 
         this.prepareTemplates();
 
+        //holds index of current view of a widget
         this.currentViewIndex = 0;
-
 
         //if header add noisy background
         if (this.model.get("type") == "header") {
@@ -47,7 +48,9 @@
         //also construct uplaods if necessary
         this.createFileUploads();
 
-
+        /************************************************************************/
+        /* edit page models for edit view template                              */
+        /************************************************************************/
         this.WidgetEditModels = {
             "header": [{
                 modelAttr: "header",
@@ -276,27 +279,15 @@
         var imgWrapper = frm.siblings(".img-wrapper");
         var imgId = $(imgWrapper).attr("id");
 
-        console.log("ewrewrwer");
         $(frm).ajaxSubmit(function (d) {
-            /*var img = document.createElement("img");
-            img.src = "/Content/Images/Thumb/" + d.src;
-            self.imagesUploaded(img, imgId, "/Content/Images/Thumb/" + d.src);*/
-
-            //console.log(JSON.parse(d), arguments);
 
             var dd = false;
             if ($.browser.msie) {
-                console.log(d);
                 var die = $(d).html();
-
-                console.log(die);
                 dd = $.parseJSON(die);
-                console.log(dd);
             } else {
                 dd = $.parseJSON(d);
             }
-
-
 
             self.imagesUploaded(imgId, "/Content/Images/Thumb/" + dd.src);
 
@@ -307,6 +298,17 @@
         var self = this;
         var id = imgId.split("-")[1];
         self.model.set("imgSrc" + id, imgSrc);
+    },
+
+    openWidgetBox: function (e) {
+        console.log("tototot", $(e.target).offset());
+
+        var offset = $(e.target).offset();
+
+        editorView.selectedWidget = this;
+
+        $(".widgets-gallery-box").css({ "top": offset.top, "left": offset.left - 103 }).show();
+        
     }
 
 });
