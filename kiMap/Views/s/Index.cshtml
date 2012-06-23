@@ -23,6 +23,52 @@
         filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
     }
 </style>
+
+<form>
+  <!-- <div id="toolbar" style="display: none;">
+    <a data-wysihtml5-command="bold" title="CTRL+B">bold</a> |
+    <a data-wysihtml5-command="italic" title="CTRL+I">italic</a> |
+    <a data-wysihtml5-command="createLink">insert link</a> |
+    <a data-wysihtml5-command="insertImage">insert image</a> |
+    <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h1">h1</a> |
+    <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h2">h2</a> |
+    <a data-wysihtml5-command="insertUnorderedList">insertUnorderedList</a> |
+    <a data-wysihtml5-command="insertOrderedList">insertOrderedList</a> |
+    <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="red">red</a> |
+    <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="green">green</a> |
+    <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="blue">blue</a> |
+    <a data-wysihtml5-command="insertSpeech">speech</a>
+    <a data-wysihtml5-action="change_view">switch to html view</a>
+    
+    <div data-wysihtml5-dialog="createLink" style="display: none;">
+      <label>
+        Link:
+        <input data-wysihtml5-dialog-field="href" value="http://">
+      </label>
+      <a data-wysihtml5-dialog-action="save">OK</a>&nbsp;<a data-wysihtml5-dialog-action="cancel">Cancel</a>
+    </div>
+    
+    <div data-wysihtml5-dialog="insertImage" style="display: none;">
+      <label>
+        Image:
+        <input data-wysihtml5-dialog-field="src" value="http://">
+      </label>
+      <label>
+        Align:
+        <select data-wysihtml5-dialog-field="className">
+          <option value="">default</option>
+          <option value="wysiwyg-float-left">left</option>
+          <option value="wysiwyg-float-right">right</option>
+        </select>
+      </label>
+      <a data-wysihtml5-dialog-action="save">OK</a>&nbsp;<a data-wysihtml5-dialog-action="cancel">Cancel</a>
+    </div>
+    
+  </div> -->
+  <textarea id="textarea4" placeholder="Enter text ..."></textarea>
+  <br><input type="reset" value="Reset form!">
+</form>
+<style>.frameBody{font-family:sans-serif;font-size:12px;margin:0;width:100%;height:100%}.frameBody p{border:1px #bbb solid;padding:2px}.rte-zone{width:350px;margin:0;padding:0;height:160px;border:1px #999 solid;clear:both}.rte-toolbar{overflow:hidden}.rte-toolbar a,.rte-toolbar a img{border:0}.rte-toolbar p{float:left;margin:0;padding-right:5px}</style>
 <ul id="widgets-gallery-box" class="widgets-gallery-box" style="display:none;">
     <li id="text">text</li>
     <li id="title">title</li>
@@ -36,6 +82,7 @@
 </div>
 <script type="text/template" id="header-widget-template">
         	<div class="content widget-header widget-el">
+                <h3><%= order %> </h3>
             	<h1 class="widget-el"><%=header%></h1>
             	<h2 class="widget-el"><%=subheader%></h2>
         	</div>
@@ -66,6 +113,7 @@
 </script>
 <script type="text/template" id="text-widget-template">
         	<div class="content widget-text-paragraph paragraph-image widget-imgtext widget-el">
+                <h3><%= order %> </h3>
             	<div class="right-part img-container widget-el">
 
                     <div class="img-wrapper widget-el" id="img-1">
@@ -117,6 +165,7 @@
 </script>
 <script type="text/template" id="title-widget-template">
         	<div class="content widget-text widget-title widget-el">
+                <h3><%= order %> </h3>
             	<h1 class="content-center widget-el"><%=content%></h1>
         	</div>
 </script>
@@ -127,6 +176,7 @@
 </script>
 <script type="text/template" id="gallery-widget-template">
         	<div class="content widget-text widget-gallery widget-el">
+                <h3><%= order %> </h3>
             	<div class="left-part widget-el span_3 break-word">
 	            	<div class="img-container widget-el">
                         <div class="img-wrapper widget-el" id="img-1">
@@ -237,8 +287,9 @@
 </script>
 <script type="text/template" id="bio-widget-template">
         	<div class="content widget-text-paragraph paragraph-image widget-bio height140 widget-el">
-                
+                <h3><%= order %> </h3>
             	<div class="left-part left-part-floater span_4 widget-el">
+                    
             		<div class="img-container">
                         <div class="img-wrapper widget-el" id="img-1">
                             <% try { %>
@@ -287,7 +338,47 @@
         <% if(field.type=="text") { %>
             <input class="edit-widget-input" type="text" value="<%=field.content%>" model-attr="<%=field.modelAttr%>"/>
         <% } else if(field.type=="paragraph") { %>
-            <textarea class="edit-widget-input" rows="5" cols="10" type="text" model-attr="<%=field.modelAttr%>"><%=field.content%></textarea>
+              <div id="toolbar-<%= field.order %>_<%=i%>" style="display: none;">
+                <a data-wysihtml5-command="bold" title="CTRL+B">bold</a> |
+                <a data-wysihtml5-command="italic" title="CTRL+I">italic</a> |
+                <a data-wysihtml5-command="createLink">insert link</a> |
+                <a data-wysihtml5-command="insertImage">insert image</a> |
+                <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h1">h1</a> |
+                <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h2">h2</a> |
+                <a data-wysihtml5-command="insertUnorderedList">insertUnorderedList</a> |
+                <a data-wysihtml5-command="insertOrderedList">insertOrderedList</a> |
+                <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="red">red</a> |
+                <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="green">green</a> |
+                <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="blue">blue</a> |
+                <a data-wysihtml5-command="insertSpeech">speech</a>
+                <a data-wysihtml5-action="change_view">switch to html view</a>
+    
+                <div data-wysihtml5-dialog="createLink" style="display: none;">
+                  <label>
+                    Link:
+                    <input data-wysihtml5-dialog-field="href" value="http://">
+                  </label>
+                  <a data-wysihtml5-dialog-action="save">OK</a>&nbsp;<a data-wysihtml5-dialog-action="cancel">Cancel</a>
+                </div>
+    
+                <div data-wysihtml5-dialog="insertImage" style="display: none;">
+                  <label>
+                    Image:
+                    <input data-wysihtml5-dialog-field="src" value="http://">
+                  </label>
+                  <label>
+                    Align:
+                    <select data-wysihtml5-dialog-field="className">
+                      <option value="">default</option>
+                      <option value="wysiwyg-float-left">left</option>
+                      <option value="wysiwyg-float-right">right</option>
+                    </select>
+                  </label>
+                  <a data-wysihtml5-dialog-action="save">OK</a>&nbsp;<a data-wysihtml5-dialog-action="cancel">Cancel</a>
+                </div>
+    
+              </div>
+            <textarea id="textarea-<%= field.order %>_<%=i%>" class="edit-widget-input" rows="5" cols="10" type="text" model-attr="<%=field.modelAttr%>"><%=field.content%></textarea>
         <% } %>
         </li>
 
@@ -315,13 +406,30 @@
 <script src="../../Scripts/lib/backbone.js" type="text/javascript"></script>
 <script src="../../Scripts/lib/fileuploader.js" type="text/javascript"></script>
 <script src="../../Scripts/lib/si.files.js" type="text/javascript"></script>
+
+<script src="../../Scripts/lib/wysihtml5-0.3.0.js" type="text/javascript"></script>
+<script src="../../Scripts/lib/parser-rules.js" type="text/javascript"></script>
+<script src="../../Scripts/lib/jquery.rte.js" type="text/javascript"></script>
+
 <script src="../../Scripts/jquery-te-Core.js" type="text/javascript"></script>
 <script src="../../Scripts/jquery.form.js" type="text/javascript"></script>
 <script src="../../Scripts/init.js" type="text/javascript" charset="utf-8"></script>
 <script src="../../Scripts/models/WidgetModel.js" type="text/javascript" charset="utf-8"></script>
-<script src="../../Scripts/collections/WidgetsCollection.js" type="text/javascript"
-    charset="utf-8"></script>
+<script src="../../Scripts/collections/WidgetsCollection.js" type="text/javascript" charset="utf-8"></script>
 <script src="../../Scripts/views/EditorView.js" type="text/javascript" charset="utf-8"></script>
 <script src="../../Scripts/views/WidgetView.js" type="text/javascript" charset="utf-8"></script>
 <script src="../../Scripts/views/WidgetBoxView.js" type="text/javascript" charset="utf-8"></script>
 <script src="../../Scripts/app.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript">
+    $(function () {
+        /*var textEditor = new wysihtml5.Editor
+            (
+               "textarea",
+               {
+                   toolbar: "toolbar",
+                   parserRules: wysihtml5ParserRules
+               }
+            );*/
+    });
+</script>

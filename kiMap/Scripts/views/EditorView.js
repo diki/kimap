@@ -37,42 +37,70 @@ var EditorView = Backbone.View.extend({
         var self = this;
 
         var currentOrder = self.selectedWidget.model.get("order");
+
+        self.selectedWidget.model.toJSON();
+        console.log(currentOrder, self.selectedWidget.model.toJSON());
+
         //update orders of left siblings
         this.collection.each(function (el, idx) {
             var o = el.get("order");
+            console.log(o);
             if (o > currentOrder) {
-                el.set("order", 0 + 1);
+                el.set("order", el.get("order") + 1);
             }
         });
 
-        var newOrder = currentOrder++;
+        var newOrder = currentOrder + 1;
         newModel.set("order", newOrder);
-
-
 
         switch (newModel.get("type")) {
             case "title":
-                var v = new WidgetView({ model: DefaultTitleModel });
+                newModel.set("type", "title");
+                newModel.set("content", "Ürünlerimiz");
+
+                var v = new WidgetView({ model: newModel });
                 $(self.selectedWidget.el).after(v.el);
                 break;
 
             case "text":
-                var v = new WidgetView({ model: DefaultTextModel });
+                newModel.set("type", "text");
+                newModel.set("title", "Bu işte en iyi biziz");
+                newModel.set("content", "Ne iş yapıyorsunuz. Sizin için önemi nedir. Ürün, servis ...");
+
+                var v = new WidgetView({ model: newModel });
                 $(self.selectedWidget.el).after(v.el);
                 break;
 
             case "gallery":
-                var v = new WidgetView({ model: DefaultGalleryModel });
+                newModel.set("type", "gallery");
+                newModel.set("title1", "title 1");
+                newModel.set("content1", "content 1");
+
+                newModel.set("title2", "title 2");
+                newModel.set("content2", "content 2");
+
+                newModel.set("title3", "title 3");
+                newModel.set("content3", "content 3");
+
+                var v = new WidgetView({ model: newModel });
                 $(self.selectedWidget.el).after(v.el);
                 break;
 
             case "bio":
-                var v = new WidgetView({ model: DefaultBioModel });
+                newModel.set("type", "bio");
+                newModel.set("title", "Biz !!!");
+                newModel.set("address", "Adres");
+                newModel.set("phone", "phone");
+                newModel.set("email", "email");
+                newModel.set("website", "webSite");
+
+                var v = new WidgetView({ model: newModel });
                 $(self.selectedWidget.el).after(v.el);
                 break;
 
             case "close":
                 console.log("close");
+                return;
                 //$("#widgets-gallery-box").hide();
             default:
         }

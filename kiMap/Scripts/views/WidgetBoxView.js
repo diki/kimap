@@ -31,15 +31,18 @@ var WidgetBoxView = Backbone.View.extend({
     addNewModelFromWidgetBox: function (e) {
         var widgetType = $(e.target).attr("id");
 
+
         var el = $(e.target).parents("ul");
 
         if (!editorView.selectedWidget) {
             return;
         }
 
-        widgetsCollection.add(new WidgetModel({
-            type: widgetType
-        }));
+        if (widgetType !== "close") {
+            widgetsCollection.add(new WidgetModel({
+                type: widgetType
+            }));
+        }
 
         $(this.el).hide();
 

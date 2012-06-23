@@ -170,7 +170,7 @@
         //reconstruct this.templates
 
         if (this.model.hasChanged("order")) {
-            return;
+            //return;
         }
 
         console.log("model update");
@@ -237,14 +237,42 @@
             el.content = self.model.get(el.modelAttr);
         });
 
-        var widgetEditModelEl = _.template($("#widget-edit-template").html())({ fields: widgetEditModel });
+        console.log(self.model.toJSON());
+        //order number of widget will be used to generate unique id for text editor fields
+        //necessary for wysihtml5 to work properly
+        _.each(widgetEditModel, function (el) {
+            //console.log(el);
+            el.order = self.model.get("order");
+        })
 
+
+        var widgetEditModelEl = _.template($("#widget-edit-template").html())({ fields: widgetEditModel });
         //add dom element editing class to disable hover action
         $(this.el).addClass("editing");
 
         $(".content", self.el).remove();
         $(".edit-view", self.el).remove();
         $(self.el).append(widgetEditModelEl);
+
+
+        //apply wysihtml5 text editor plugin if already not applied
+
+        $("textarea", widgetEditModelEl).each(function (idx, el) {
+            var tid = $(el).attr("id");
+            var sid = tid.split("-")[1];
+            var textEditor = new wysihtml5.Editor
+            (
+                tid,
+                {
+                    toolbar: "toolbar-"+sid,
+                    parserRules: wysihtml5ParserRules
+                }
+            );
+
+        });
+
+
+
 
     },
 
@@ -305,7 +333,7 @@
     },
 
     openWidgetBox: function (e) {
-        console.log("tototot", $(e.target).offset());
+
 
         var offset = $(e.target).offset();
 

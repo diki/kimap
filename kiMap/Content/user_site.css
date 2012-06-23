@@ -91,7 +91,7 @@
 }
 
 .bg-noise1 {
-	background-image: url('../img/noise1.png')
+	background-image: url('img/noise1.png')
 }
 
 .widget-header h1 {
@@ -236,5 +236,9 @@
 	border: 1px solid #A37;
 	height: 25px;
 	margin: 2px 0px;
+	
+}
+
+#editor-toolbar {
 	
 }

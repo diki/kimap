@@ -110,15 +110,18 @@
     <Content Include="Content\jquery-te-Style.css" />
     <Content Include="Content\landing_header.css" />
     <Content Include="Content\ie.css" />
+    <Content Include="Content\img\noise1.png" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\collections\WidgetsCollection.js" />
     <Content Include="Scripts\init.js" />
     <Content Include="Scripts\jquery-te-Core.js" />
     <Content Include="Scripts\jquery.form.js" />
+    <Content Include="Scripts\lib\jquery.rte.js" />
     <Content Include="Scripts\lib\backbone.js" />
     <Content Include="Scripts\lib\fileuploader.js" />
     <Content Include="Scripts\lib\jquery.js" />
     <Content Include="Scripts\lib\json2.js" />
+    <Content Include="Scripts\lib\parser-rules.js" />
     <Content Include="Scripts\lib\underscore.js" />
     <Content Include="Scripts\lib\underscore.string.js" />
     <Content Include="Content\style3.css" />
@@ -221,6 +224,7 @@
     <Content Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\lib\wysihtml5-0.3.0.js" />
     <Content Include="Scripts\models\WidgetModel.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />

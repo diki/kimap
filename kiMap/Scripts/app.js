@@ -38,7 +38,7 @@ $(function () {
     window.DefaultBioModel = new WidgetModel({
         type: "bio",
         title: "Biz !!!",
-        address: "Adrs",
+        address: "Adres",
         phone: "phone",
         email: "email",
         website: "website",

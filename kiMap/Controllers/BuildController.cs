@@ -37,7 +37,7 @@ namespace kiMap.Controllers
             var DefaultTitleModel = new {
                 type = "title",
                 content = "Ürünlerimiz",
-                order = 3
+                order = 2
             };
 
             //gallery
@@ -49,7 +49,7 @@ namespace kiMap.Controllers
                 content2 =  "content 2",
                 title3 =  "title 3",
                 content3 =  "content 3",
-                order = 4
+                order = 3
                 
             };
 
@@ -61,7 +61,7 @@ namespace kiMap.Controllers
                 phone =  "phone",
                 email =  "email",
                 website =  "website",
-                order = 5
+                order = 4
             };
 
             List<Object> models = new List<object>();
