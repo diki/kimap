@@ -48,11 +48,12 @@ $(function () {
     });
 
     window.widgetsCollection = new WidgetsCollection();
-    widgetsCollection.add(DefaultHeaderModel);
-    widgetsCollection.add(DefaultTextModel);
-    widgetsCollection.add(DefaultTitleModel);
-    widgetsCollection.add(DefaultGalleryModel);
-    widgetsCollection.add(DefaultBioModel);
+//    widgetsCollection.add(DefaultHeaderModel);
+//    widgetsCollection.add(DefaultTextModel);
+//    widgetsCollection.add(DefaultTitleModel);
+//    widgetsCollection.add(DefaultGalleryModel);
+//    widgetsCollection.add(DefaultBioModel);
+
 
     window.editorView = new EditorView({
         collection: widgetsCollection

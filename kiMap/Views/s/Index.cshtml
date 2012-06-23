@@ -130,7 +130,10 @@
             	<div class="left-part widget-el span_3 break-word">
 	            	<div class="img-container widget-el">
                         <div class="img-wrapper widget-el" id="img-1">
-                            <img src="<%=imgSrc1%>" />
+                            <% try { %>
+                                <img src="<%=imgSrc1%>" />
+                            <% } catch(err) { %>
+                            <% } %>
                         </div>
                         <form class="img-upload-form" method="post" action="/Images/upload" enctype="multipart/form-data">
                             <label class="cabinet"> 
@@ -145,7 +148,10 @@
             	<div class="left-part widget-el span_3 break-word">
 	            	<div class="img-container widget-el">
                         <div class="img-wrapper widget-el" id="img-2">
-                            <img src="<%=imgSrc2%>" />
+                            <% try { %>
+                                <img src="<%=imgSrc2%>" />
+                            <% } catch(err) { %>
+                            <% } %>                            
                         </div>
                         <form class="img-upload-form" method="post" action="/Images/upload" enctype="multipart/form-data">
                             <label class="cabinet"> 
@@ -160,7 +166,10 @@
             	<div class="left-part widget-el span_3 break-word">
 	            	<div class="img-container widget-el">
                         <div class="img-wrapper widget-el" id="img-3">
-                            <img src="<%=imgSrc3%>" />
+                            <% try { %>
+                                <img src="<%=imgSrc3%>" />
+                            <% } catch(err) { %>
+                            <% } %>
                         </div>
                         <form class="img-upload-form" method="post" action="/Images/upload" enctype="multipart/form-data">
                             <label class="cabinet"> 
@@ -180,7 +189,10 @@
             	<div class="left-part span_3 widget-el">
 	            	<div class="img-container widget-el">
                         <div class="img-wrapper widget-el" id="img-1">
-                            <img src="<%=imgSrc1%>" />
+                            <% try { %>
+                                <img src="<%=imgSrc1%>" />
+                            <% } catch(err) { %>
+                            <% } %>
                         </div>
                         <form class="img-upload-form" method="post" action="/Images/upload" enctype="multipart/form-data">
                             <label class="cabinet"> 
@@ -192,7 +204,10 @@
             	<div class="left-part span_3 widget-el">
 	            	<div class="img-container widget-el">
                         <div class="img-wrapper widget-el" id="img-2">
-                            <img src="<%=imgSrc2%>" />
+                            <% try { %>
+                                <img src="<%=imgSrc2%>" />
+                            <% } catch(err) { %>
+                            <% } %>
                         </div>
                         <form class="img-upload-form" method="post" action="/Images/upload" enctype="multipart/form-data">
                             <label class="cabinet"> 
@@ -204,7 +219,10 @@
             	<div class="left-part span_3 widget-el">
 	            	<div class="img-container widget-el">
                         <div class="img-wrapper widget-el" id="img-3">
-                            <img src="<%=imgSrc3%>" />
+                            <% try { %>
+                                <img src="<%=imgSrc3%>" />
+                            <% } catch(err) { %>
+                            <% } %>                            
                         </div>
                         <form class="img-upload-form" method="post" action="/Images/upload" enctype="multipart/form-data">
                             <label class="cabinet"> 
@@ -223,7 +241,10 @@
             	<div class="left-part left-part-floater span_4 widget-el">
             		<div class="img-container">
                         <div class="img-wrapper widget-el" id="img-1">
-                            <img src="<%=imgSrc1%>" />
+                            <% try { %>
+                                <img src="<%=imgSrc1%>" />
+                            <% } catch(err) { %>
+                            <% } %>
                         </div>
                         <form class="img-upload-form" method="post" action="/Images/upload" enctype="multipart/form-data">
                             <label class="cabinet"> 
@@ -235,12 +256,12 @@
             	
             	<div class="left-part left-part-floater span_12 bio-container widget-el">
 	            	<h2 class="widget-el"><%=title%></h2>
-	            	<% if(fb!==undefined) { %>
+	            	<% try { %>
 	            		<h4 class="widget-el"><%=fb%></h4>
-	            	<% } %>
-	            	<% if(tw!==undefined) { %>
+	            	<% } catch(err) {} %>
+	            	<% try { %>
 	            		<h4 class="widget-el"><%=tw%></h4>
-	            	<% } %>
+	            	<% } catch(err) {} %>
 	            	<ul class="bio-list">
 		            	<li class="widget-el"><%=address%></li>
 		            	<li class="widget-el"><%=phone%></li>
