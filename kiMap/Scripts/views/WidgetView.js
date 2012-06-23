@@ -169,6 +169,10 @@
     modelUpdate: function () {
         //reconstruct this.templates
 
+        if (this.model.hasChanged("order")) {
+            return;
+        }
+
         console.log("model update");
         this.prepareTemplates();
         this.render();
@@ -308,7 +312,7 @@
         editorView.selectedWidget = this;
 
         $(".widgets-gallery-box").css({ "top": offset.top, "left": offset.left - 103 }).show();
-        
+
     }
 
 });

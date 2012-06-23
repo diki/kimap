@@ -37,26 +37,12 @@ var WidgetBoxView = Backbone.View.extend({
             return;
         }
 
-        var vidgetTemplate = $("#" + widgetType + "-widget-template");
-        //TODO: move this method to a mamager object
-        switch (widgetType) {
-            case "title":
-                var v = new WidgetView({ model: DefaultTitleModel });
-                $(editorView.selectedWidget.el).after(v.el);
-                break;
-            case "text":
-                var v = new WidgetView({ model: DefaultTextModel });
-                $(editorView.selectedWidget.el).after(v.el);
-                break;
-            case "gallery":
-                break;
-            case "bio":
-                break;
-            case "close":
-                console.log("close");
-                el.hide();
-            default:
-        }
+        widgetsCollection.add(new WidgetModel({
+            type: widgetType
+        }));
+
+        $(this.el).hide();
+
     }
 
 

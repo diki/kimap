@@ -48,11 +48,6 @@ $(function () {
     });
 
     window.widgetsCollection = new WidgetsCollection();
-//    widgetsCollection.add(DefaultHeaderModel);
-//    widgetsCollection.add(DefaultTextModel);
-//    widgetsCollection.add(DefaultTitleModel);
-//    widgetsCollection.add(DefaultGalleryModel);
-//    widgetsCollection.add(DefaultBioModel);
 
 
     window.editorView = new EditorView({
@@ -63,4 +58,5 @@ $(function () {
     /* initializing widget box view, handle new widget addition             */
     /************************************************************************/
     window.widgetBoxView = new WidgetBoxView();
+    widgetsCollection.fetch();
 });
