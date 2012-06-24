@@ -21,8 +21,9 @@ namespace kiMap.Controllers
             {
                 type = "header",
                 header = "Mesajınızı buraya yazın",
-                subheader = "Alt başlık ekleyin",
-                order = 0
+                subheader = "Alt başlık ekleyiniz",
+                order = 0,
+                templateIndex = 0
             };
 
             var DefaultTextModel = new
@@ -30,7 +31,8 @@ namespace kiMap.Controllers
                 type= "text",
                 title= "Bu işte en iyi biziz",
                 content= "Ne iş yapıyorsunuz. Sizin için önemi nedir. Ürün, servis ...",
-                order = 1
+                order = 1,
+                templateIndex = 1
             };
 
             //title

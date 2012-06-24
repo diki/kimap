@@ -4,6 +4,10 @@
 	
 	margin-left: auto;
 	margin-right: auto;
+    
+    box-shadow: 0px 0px 10px #CCC;
+    -webkit-box-shadow: 0px 0px 10px #CCC;
+    -moz-box-shadow: 0px 0px 10px #CCC;
 }
 
 #usersiteheader {
@@ -14,11 +18,12 @@
 
 .row {
 	/*margin-bottom: 20px;*/
-	border: 2px solid #000;
-	padding: 20px;
+	/*border: 2px solid #000;*/
+	/*padding: 20px;*/
 	position: relative;
 	z-index: 0;
 }
+
 
 .col {
 	float: left;
@@ -46,8 +51,8 @@
 
 .content {
 	position: relative;
-	
-	z-index: 100;
+	margin: 20px 20px 0px 20px;
+	z-index: 101;
 }
 
 .edit-view {
@@ -57,7 +62,7 @@
 	bottom: 0;
 	/*width: 100%;
 	height: 100%;*/
-	z-index: 1;
+	z-index: 100;
 	left: 0;
 }
 
@@ -66,6 +71,7 @@
 	background: black;
 	opacity: 0.5;
 	width: 100px;
+	/*position: absolute;*/
 }
 
 
@@ -75,16 +81,24 @@
 }
 
 .edit-view-button {
-	
+	right: 20px;
+	top: 24px;
 }
-.edit-view-slide-button {
-	margin-top: 30px;
+.edit-view-slide-button-right {
+	top: 40%;
+	/*width: 120px;*/
+	right: 20px;
+}
+
+.edit-view-slide-button-left {
+	top: 40%;
+	left: 20px;
 	/*width: 120px;*/
 }
 
 .edit-view-add-button {
-	position: absolute;
-	bottom: 0;
+	bottom: 16px;
+	margin-left: 20px;
 }
 .content-center {
 	text-align: center;
@@ -98,6 +112,22 @@
 	text-align: center;
 }
 
+.header-widget .edit-view-slide-button-right {
+	right: 0px;
+}
+
+.header-widget .edit-view-slide-button-left {
+	left: 0px;
+}
+
+.header-widget .edit-view-add-button {
+	margin-left: 0px;
+}
+
+.header-widget .edit-view-button {
+	right: 0px;
+	top: 0px;
+}
 .widget-header h2 {
 	text-align: center;
 }
@@ -122,6 +152,7 @@
 	/*margin: 10px;*/
 	z-index: 3;
 	background: #e5e5e5;
+	margin-right: 16px;
 }
 
 
@@ -241,4 +272,15 @@
 
 #editor-toolbar {
 	
+}
+
+.inner {
+	border: 2px dashed #ddd;
+	padding: 10px;
+	border-radius: 6px;
+	
+}
+
+.text-widget-content {
+	padding: 0px 16px;
 }

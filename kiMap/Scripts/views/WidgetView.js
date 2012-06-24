@@ -27,8 +27,13 @@
 
         this.prepareTemplates();
 
-        //holds index of current view of a widget
-        this.currentViewIndex = 0;
+        //holds index of current view of a widget 
+        if (this.model.get("templateIndex") == undefined) {
+            this.currentViewIndex = 0;
+        } else {
+            this.currentViewIndex = this.model.get("templateIndex");
+        }
+
 
         //if header add noisy background
         if (this.model.get("type") == "header") {
@@ -169,8 +174,8 @@
     modelUpdate: function () {
         //reconstruct this.templates
 
-        if (this.model.hasChanged("order")) {
-            //return;
+        if (this.model.hasChanged("order") || this.model.hasChanged("templateIndex")) {
+            return;
         }
 
         console.log("model update");
@@ -180,6 +185,10 @@
 
     render: function () {
         var self = this;
+
+        if (self.model.get("type") === "header") {
+            $(self.el).addClass("header-widget");
+        }
         $(this.el).html(self.templates[self.currentViewIndex]);
     },
 
@@ -209,6 +218,7 @@
     alternateWidgetView: function (e) {
         var self = this;
 
+        console.log("eeeeeee");
         $(".content", self.el).remove();
 
         if ($(e.target).hasClass("right-part")) {
@@ -226,6 +236,8 @@
         }
 
         $(self.templates[self.currentViewIndex]).prependTo($(self.el));
+        //also update model templateIndex value
+        self.model.set("templateIndex", self.currentViewIndex);
     },
 
     openEditView: function () {
@@ -264,7 +276,7 @@
             (
                 tid,
                 {
-                    toolbar: "toolbar-"+sid,
+                    toolbar: "toolbar-" + sid,
                     parserRules: wysihtml5ParserRules
                 }
             );

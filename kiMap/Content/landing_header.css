@@ -129,13 +129,13 @@ a
 .right-part-floater
 {
     float: right;
-    margin-right: 0px;
+    /*margin-right: 20px;*/
 }
 
 .left-part-floater
 {
     float: left;
-    margin-left: 0px;
+    /*margin-left: 20px;*/
 }
 
 .logon-wrapper

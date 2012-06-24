@@ -116,7 +116,6 @@
     <Content Include="Scripts\init.js" />
     <Content Include="Scripts\jquery-te-Core.js" />
     <Content Include="Scripts\jquery.form.js" />
-    <Content Include="Scripts\lib\jquery.rte.js" />
     <Content Include="Scripts\lib\backbone.js" />
     <Content Include="Scripts\lib\fileuploader.js" />
     <Content Include="Scripts\lib\jquery.js" />

@@ -82,7 +82,6 @@
 </div>
 <script type="text/template" id="header-widget-template">
         	<div class="content widget-header widget-el">
-                <h3><%= order %> </h3>
             	<h1 class="widget-el"><%=header%></h1>
             	<h2 class="widget-el"><%=subheader%></h2>
         	</div>
@@ -113,9 +112,9 @@
 </script>
 <script type="text/template" id="text-widget-template">
         	<div class="content widget-text-paragraph paragraph-image widget-imgtext widget-el">
-                <h3><%= order %> </h3>
+                <div class="inner">
             	<div class="right-part img-container widget-el">
-
+                    
                     <div class="img-wrapper widget-el" id="img-1">
                         <% try { %>
                             <img src="<%=imgSrc1%>" />
@@ -133,10 +132,12 @@
             	<div class="widget-el"><%=content%></div>
 
                 <br style="clear:both" />
+                </div>
         	</div>
 </script>
 <script type="text/template" id="text-widget-alt-template">
         	<div class="content widget-text-paragraph paragraph-image widget-imgtext widget-el">
+                <div class="inner">
             	<div class="left-part img-container widget-el">
                     <div class="img-wrapper widget-el" id="img-1">
                         <% try { %>
@@ -155,28 +156,34 @@
             	<div class="widget-el"><%=content%></div>
 
                 <br style="clear:both" />
+                </div>
         	</div>
 </script>
 <script type="text/template" id="text-widget-extra-template">
         	<div class="content widget-text-paragraph paragraph-image widget-imgtext widget-el">
+                <div class="inner">
             	<h2 class="widget-el"><%=title%></h2>
             	<div class="widget-el"><%=content%></div>
+                </div>
         	</div>
 </script>
 <script type="text/template" id="title-widget-template">
         	<div class="content widget-text widget-title widget-el">
-                <h3><%= order %> </h3>
+                <div class="inner">
             	<h1 class="content-center widget-el"><%=content%></h1>
+                </div>
         	</div>
 </script>
 <script type="text/template" id="title-widget-alt-template">
         	<div class="content widget-text widget-title widget-el">
+                <div class="inner">
             	<h1 class="widget-el"><%=content%></h1>
+                </div>
         	</div>
 </script>
 <script type="text/template" id="gallery-widget-template">
         	<div class="content widget-text widget-gallery widget-el">
-                <h3><%= order %> </h3>
+                <div class="inner">
             	<div class="left-part widget-el span_3 break-word">
 	            	<div class="img-container widget-el">
                         <div class="img-wrapper widget-el" id="img-1">
@@ -232,10 +239,12 @@
             	</div>
             	
             	<br style="clear: both;"/>
+                </div>
         	</div>
 </script>
 <script type="text/template" id="gallery-widget-alt-template">
         	<div class="content widget-text widget-gallery widget-el">
+                <div class="inner">
             	<div class="left-part span_3 widget-el">
 	            	<div class="img-container widget-el">
                         <div class="img-wrapper widget-el" id="img-1">
@@ -283,11 +292,12 @@
             	</div>
             	
             	<br style="clear: both;"/>
+                </div>
         	</div>
 </script>
 <script type="text/template" id="bio-widget-template">
         	<div class="content widget-text-paragraph paragraph-image widget-bio height140 widget-el">
-                <h3><%= order %> </h3>
+                <div class="inner">
             	<div class="left-part left-part-floater span_4 widget-el">
                     
             		<div class="img-container">
@@ -322,6 +332,7 @@
             	</div>
             	
             	<br style="clear:both;" />
+                </div>
         	</div>
 </script>
 <!-- editor view template for general -->
