@@ -199,7 +199,7 @@
         if ($(e.target).hasClass("widget-el") && !$(e.target).hasClass("editing")) {
             /*console.log("eeee")
             return;*/
-            if ($(".edit-view", self.el).length == 0) {
+            if ($(".edit-view-el", self.el).length == 0) {
                 var hasAlternatives = this.templates.length > 1;
                 $(this.el).append(_.template($("#edit-widget-template").html())({ slider: hasAlternatives }));
             }
@@ -212,22 +212,21 @@
 
     widgetMouseLeave: function (e) {
         //e.stopPropagation();
-        $(".edit-view", this.el).remove();
+        $(".edit-view-el", this.el).remove();
     },
 
     alternateWidgetView: function (e) {
         var self = this;
 
-        console.log("eeeeeee");
         $(".content", self.el).remove();
 
-        if ($(e.target).hasClass("right-part")) {
+        if ($(e.target).hasClass("edit-view-slide-button-right")) {
             if (self.currentViewIndex == self.templates.length - 1) {
                 self.currentViewIndex = 0;
             } else {
                 self.currentViewIndex++;
             }
-        } else if ($(e.target).hasClass("left-part")) {
+        } else if ($(e.target).hasClass("edit-view-slide-button-left")) {
             if (self.currentViewIndex == 0) {
                 self.currentViewIndex = self.templates.length - 1;
             } else {
@@ -263,7 +262,7 @@
         $(this.el).addClass("editing");
 
         $(".content", self.el).remove();
-        $(".edit-view", self.el).remove();
+        $(".edit-view-el", self.el).remove();
         $(self.el).append(widgetEditModelEl);
 
 

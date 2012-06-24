@@ -24,51 +24,6 @@
     }
 </style>
 
-<form>
-  <!-- <div id="toolbar" style="display: none;">
-    <a data-wysihtml5-command="bold" title="CTRL+B">bold</a> |
-    <a data-wysihtml5-command="italic" title="CTRL+I">italic</a> |
-    <a data-wysihtml5-command="createLink">insert link</a> |
-    <a data-wysihtml5-command="insertImage">insert image</a> |
-    <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h1">h1</a> |
-    <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h2">h2</a> |
-    <a data-wysihtml5-command="insertUnorderedList">insertUnorderedList</a> |
-    <a data-wysihtml5-command="insertOrderedList">insertOrderedList</a> |
-    <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="red">red</a> |
-    <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="green">green</a> |
-    <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="blue">blue</a> |
-    <a data-wysihtml5-command="insertSpeech">speech</a>
-    <a data-wysihtml5-action="change_view">switch to html view</a>
-    
-    <div data-wysihtml5-dialog="createLink" style="display: none;">
-      <label>
-        Link:
-        <input data-wysihtml5-dialog-field="href" value="http://">
-      </label>
-      <a data-wysihtml5-dialog-action="save">OK</a>&nbsp;<a data-wysihtml5-dialog-action="cancel">Cancel</a>
-    </div>
-    
-    <div data-wysihtml5-dialog="insertImage" style="display: none;">
-      <label>
-        Image:
-        <input data-wysihtml5-dialog-field="src" value="http://">
-      </label>
-      <label>
-        Align:
-        <select data-wysihtml5-dialog-field="className">
-          <option value="">default</option>
-          <option value="wysiwyg-float-left">left</option>
-          <option value="wysiwyg-float-right">right</option>
-        </select>
-      </label>
-      <a data-wysihtml5-dialog-action="save">OK</a>&nbsp;<a data-wysihtml5-dialog-action="cancel">Cancel</a>
-    </div>
-    
-  </div> -->
-  <textarea id="textarea4" placeholder="Enter text ..."></textarea>
-  <br><input type="reset" value="Reset form!">
-</form>
-<style>.frameBody{font-family:sans-serif;font-size:12px;margin:0;width:100%;height:100%}.frameBody p{border:1px #bbb solid;padding:2px}.rte-zone{width:350px;margin:0;padding:0;height:160px;border:1px #999 solid;clear:both}.rte-toolbar{overflow:hidden}.rte-toolbar a,.rte-toolbar a img{border:0}.rte-toolbar p{float:left;margin:0;padding-right:5px}</style>
 <ul id="widgets-gallery-box" class="widgets-gallery-box" style="display:none;">
     <li id="text">text</li>
     <li id="title">title</li>
@@ -93,22 +48,20 @@
         	</div>
 </script>
 <script type="text/template" id="edit-widget-template">
-        	<div class="edit-view">
-            	<div class="right-part right-part-floater edit-view-button"><span>edit</span></div>
-            	<br style="clear:right" />
+        	
+            	<div class="edit-view-button edit-view-el"><span>edit</span></div>
             	
             	<% if(slider) { %>
-            		<div class="right-part right-part-floater edit-view-slide-button ">right</div>
-            		<div class="left-part left-part-floater edit-view-slide-button">left</div>
-            		<br style="clear:both" />
+            		<div class="edit-view-slide-button edit-view-el edit-view-slide-button-right">right</div>
+            		<div class="edit-view-slide-button edit-view-el edit-view-slide-button-left">left</div>
             	<% } %>
             	
-            	<div class="center-part content-center edit-view-add-button">
+            	<div class="center-part content-center edit-view-add-button edit-view-el">
             		<div class="center-part">
 	            		<span>+</span>
             		</div>
             	</div>
-        	</div>
+        	
 </script>
 <script type="text/template" id="text-widget-template">
         	<div class="content widget-text-paragraph paragraph-image widget-imgtext widget-el">
@@ -353,16 +306,16 @@
                 <a data-wysihtml5-command="bold" title="CTRL+B">bold</a> |
                 <a data-wysihtml5-command="italic" title="CTRL+I">italic</a> |
                 <a data-wysihtml5-command="createLink">insert link</a> |
-                <a data-wysihtml5-command="insertImage">insert image</a> |
+                <!-- <a data-wysihtml5-command="insertImage">insert image</a> |
                 <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h1">h1</a> |
-                <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h2">h2</a> |
+                <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h2">h2</a> | -->
                 <a data-wysihtml5-command="insertUnorderedList">insertUnorderedList</a> |
                 <a data-wysihtml5-command="insertOrderedList">insertOrderedList</a> |
-                <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="red">red</a> |
+                <!-- <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="red">red</a> |
                 <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="green">green</a> |
                 <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="blue">blue</a> |
                 <a data-wysihtml5-command="insertSpeech">speech</a>
-                <a data-wysihtml5-action="change_view">switch to html view</a>
+                <a data-wysihtml5-action="change_view">switch to html view</a> -->
     
                 <div data-wysihtml5-dialog="createLink" style="display: none;">
                   <label>

@@ -55,6 +55,11 @@
 	z-index: 101;
 }
 
+.center-part {
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .edit-view {
 	position: absolute;
 	top: 0;
@@ -67,22 +72,23 @@
 }
 
 .edit-view div {
+
+	/*position: absolute;*/
+}
+
+.edit-view-el {
+	position: absolute;
 	color: white;
 	background: black;
 	opacity: 0.5;
 	width: 100px;
-	/*position: absolute;*/
+	z-index: 200;
 }
 
-
-.center-part {
-	margin-left: auto;
-	margin-right: auto;
-}
 
 .edit-view-button {
 	right: 20px;
-	top: 24px;
+	top: 0;
 }
 .edit-view-slide-button-right {
 	top: 40%;
@@ -97,8 +103,8 @@
 }
 
 .edit-view-add-button {
-	bottom: 16px;
-	margin-left: 20px;
+	bottom: 0;
+	left: 20px;
 }
 .content-center {
 	text-align: center;
@@ -278,6 +284,7 @@
 	border: 2px dashed #ddd;
 	padding: 10px;
 	border-radius: 6px;
+	position: relative;
 	
 }
 
