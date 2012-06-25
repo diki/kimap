@@ -20,10 +20,11 @@ namespace kiMap.Controllers
             var DefaultHeaderModel = new
             {
                 type = "header",
-                header = "Mesajınızı buraya yazın",
-                subheader = "Alt başlık ekleyiniz",
+                header = "MESAJINIZI BURAYA YAZIN",
+                subheader = "Alt başlık ekleyin",
                 order = 0,
-                templateIndex = 0
+                templateIndex = 0,
+                color = "#1974f0"
             };
 
             var DefaultTextModel = new

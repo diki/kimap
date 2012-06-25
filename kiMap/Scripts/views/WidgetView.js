@@ -186,10 +186,20 @@
     render: function () {
         var self = this;
 
+
+        $(this.el).html(self.templates[self.currentViewIndex]);
+
+        //info about widget view like color, font, theme will be handled herer
+        //different types of widgets require different implemetation of color, font functions
         if (self.model.get("type") === "header") {
             $(self.el).addClass("header-widget");
+
+            //TODO: create all color effects
+            $(self.el).css("background-color", self.model.get("color"));
+            $(self.el).css("color", "white");
+        } else {
+            $(".content", self.el).addClass("not-edited");
         }
-        $(this.el).html(self.templates[self.currentViewIndex]);
     },
 
     widgetMouseEnter: function (e) {
