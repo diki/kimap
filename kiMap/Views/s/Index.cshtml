@@ -2,7 +2,7 @@
     ViewBag.Title = "site";
 }
 <link href="@Url.Content("~/Content/user_site.css")" rel="stylesheet" type="text/css" />
-<link href="@Url.Content("~/Content/jquery-te-Style.css")" rel="stylesheet" type="text/css" />
+
 <style type="text/css">
     .SI-FILES-STYLIZED label.cabinet
     {
@@ -53,8 +53,9 @@
 </script>
 <script type="text/template" id="header-widget-extra-template">
         	<div class="content widget-header widget-el bg-noise1">
-                <div class="inner">
-            	    <h1 class="widget-el"><%=header%></h1>
+                <div class="inner" style="padding:32px 0px">
+            	    <h1 class="widget-el" style=""><%=header%></h1>
+                   
                 </div>
         	</div>
 </script>

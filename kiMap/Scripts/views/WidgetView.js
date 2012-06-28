@@ -258,7 +258,7 @@
             el.content = self.model.get(el.modelAttr);
         });
 
-        console.log(self.model.toJSON());
+
         //order number of widget will be used to generate unique id for text editor fields
         //necessary for wysihtml5 to work properly
         _.each(widgetEditModel, function (el) {
@@ -267,6 +267,12 @@
         })
 
 
+        console.log(widgetEditModel);
+        //if this is a widget header and currentView is then remove subheader modelAttr
+        if (self.model.get("type") === "header" && self.currentViewIndex == 2) {
+            widgetEditModel.pop();
+            console.log(widgetEditModel);
+        }
         var widgetEditModelEl = _.template($("#widget-edit-template").html())({ fields: widgetEditModel });
         //add dom element editing class to disable hover action
         $(this.el).addClass("editing");

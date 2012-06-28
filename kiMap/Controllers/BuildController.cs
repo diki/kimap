@@ -23,7 +23,7 @@ namespace kiMap.Controllers
                 header = "MESAJINIZI BURAYA YAZIN",
                 subheader = "Alt başlık ekleyin",
                 order = 0,
-                templateIndex = 0,
+                templateIndex = 2,
                 color = "#1974f0"
             };
 
